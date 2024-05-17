@@ -37,4 +37,5 @@ public:
 	void set_vida(int nuevaVida) { vida = nuevaVida; };
 	int get_nivel() { return nivel; };
 	int entrenar(int nuevoNivel) { nivel = nuevoNivel; }; // set_nivel
+	~cJinete() {};
 };

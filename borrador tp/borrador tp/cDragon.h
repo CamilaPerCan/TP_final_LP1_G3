@@ -38,6 +38,7 @@ public:
 	bool domado() {	return estado; };
 	void set_estado(bool);
 	bool baja();
+	~cDragon() {};
 };
 
 /*
