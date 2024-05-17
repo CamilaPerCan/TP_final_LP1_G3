@@ -35,14 +35,14 @@ public:
 	void set_tipo(string ejemplar) { tipo = ejemplar; };
 	string get_tamanio() { return tamanio; };
 	void set_tamanio(string tam) { tamanio = tam; };
+	nformaAtaque get_formaAtaque() { return formaAtaque; };
+	void set_formaAtaque(nformaAtaque formita) { formaAtaque = formita; };
 	bool domado() {	return estado; };
 	void set_estado(bool);
 	bool baja();
+	int get_vida() { return vida; };
+	void set_vida(int nuevaVida) { vida = nuevaVida; };
+	int get_ataque() { return ataque; };
+	void set_ataque(int danio) { ataque = danio; };
 	~cDragon() {};
 };
-
-/*
-* falta poner el enum formaAtaque en el constructor, su get y set
-* falta preogramar : void set_estado(bool), una vez domado el dragon, puede volverse salvaje? no me acuerdo si cuando se moria uno se morian los dos o no
-* tipo y tamanio podrian ser enums?
-*/

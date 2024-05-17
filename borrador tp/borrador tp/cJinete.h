@@ -12,7 +12,7 @@ class cJinete
 	string puestoGuerra;
 	int vida; // 0-100
 	int nivel;
-	cDragon* dragoncito;
+	cDragon* dragoncito; 
 public: 
 	cJinete(string apodin, string cumple, string caracteristicas, string puesto, int nuevaVida, int nuevoNivel, cDragon nuevoDragon) {
 		apodo = apodin;
