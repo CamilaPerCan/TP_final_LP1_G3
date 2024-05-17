@@ -130,10 +130,12 @@
     <ClCompile Include="borrador tp.cpp" />
     <ClCompile Include="cDragon.cpp" />
     <ClCompile Include="cJinete.cpp" />
+    <ClCompile Include="cVikingo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cDragon.h" />
     <ClInclude Include="cJinete.h" />
+    <ClInclude Include="cVikingo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
