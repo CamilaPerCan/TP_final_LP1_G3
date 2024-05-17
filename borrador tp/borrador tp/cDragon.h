@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+//AHHHHHHHHAHAHHAHA
 enum nformaAtaque {FUEGO=1, AGUA=2, AIRE=3, TIERRA=4, VENENO=5}; 
 
 class cDragon
@@ -14,10 +14,10 @@ class cDragon
 	bool estado; // si el dragon esta domado o no
 	int vida; // 0-100
 	int ataque; // 0-50
-	nformaAtaque formula; // ver como hacer con el constructor
+	nformaAtaque formaAtaque; 
 public:
 	cDragon(string nomb, string carac, string ejemplar, string tam, bool nuevoEstado, int nuevaVida, int ofensiva, nformaAtaque
-	 formula) {
+	 formula1) {
 		nombre = nomb;
 		caracteristica = carac;
 		tipo = ejemplar;
@@ -25,7 +25,7 @@ public:
 		estado = nuevoEstado;
 		vida = nuevaVida;
 		ataque = ofensiva;
-		nformaAtaque = formula;
+		formaAtaque = formula1;
 	};
 	string get_nombre() { return nombre; };
 	void alta_nombre(string nuevoNombre) { nombre = nuevoNombre; };
