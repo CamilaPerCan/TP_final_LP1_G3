@@ -24,6 +24,6 @@ public:
 	int get_danio() { return danio; };
 	void set_danio(int ataque) { danio = ataque; };
 	int get_vida() { return vida; };
-	void set_vida(int nuevaVida) { vida = nuevaVida; };
+	void set_vida(int nuevaVida) { vida = nuevaVida; };	
 };
 

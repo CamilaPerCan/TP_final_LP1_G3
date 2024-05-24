@@ -11,7 +11,7 @@ class cJinete
 	string caracFisicas;
 	string puestoGuerra;
 	int vida; // 0-100
-	int nivel;
+	//int nivel;
 	cDragon* dragoncito; 
 public: 
 	cJinete(string apodin, string cumple, string caracteristicas, string puesto, int nuevaVida, int nuevoNivel, cDragon nuevoDragon) {
