@@ -16,17 +16,8 @@ class cDragon
 	int ataque; // 0-50
 	nformaAtaque formaAtaque; 
 public:
-	cDragon(string nomb, string carac, string ejemplar, string tam, bool nuevoEstado, int nuevaVida, int ofensiva, nformaAtaque
-	 formula1) {
-		nombre = nomb;
-		caracteristica = carac;
-		tipo = ejemplar;
-		tamanio = tam;
-		estado = nuevoEstado;
-		vida = nuevaVida;
-		ataque = ofensiva;
-		formaAtaque = formula1;
-	};
+	cDragon(string nomb, string carac, string ejemplar, string tam, bool nuevoEstado, int nuevaVida,
+		int ofensiva, nformaAtaque formula1) ;
 	string get_nombre() { return nombre; };
 	void alta_nombre(string nuevoNombre) { nombre = nuevoNombre; };
 	string get_caracteristica() { return caracteristica; };
