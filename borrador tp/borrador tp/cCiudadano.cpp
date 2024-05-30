@@ -1,6 +1,6 @@
 #include "cCiudadano.h"
 
-cCiudadano::cCiudadano(int vidita, string trabajin) {
-	vida = vidita;
-	puestoGuerra = trabajin;
+cCiudadano::cCiudadano(int vidaa, string laburin) {
+    vida = vidaa;
+    puestoGuerra = laburin;
 }

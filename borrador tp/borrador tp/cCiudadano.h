@@ -9,7 +9,8 @@ protected:
 	int vida;
 	string puestoGuerra;
 public:
-	cCiudadano(int vidaa, string laburin) {};
+	cCiudadano() {};
+	cCiudadano(int vidaa, string laburin);
 	int get_vida() { return vida; };
 	void set_vida(int nuevaVida) { vida = nuevaVida; };
 	string trabajar() { return puestoGuerra; }; // get de puesto de guerra
