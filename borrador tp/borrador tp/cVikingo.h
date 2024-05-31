@@ -14,7 +14,6 @@ class cVikingo : public cCiudadano
 public:
 	cVikingo(string nombrecin, string apellidin, int danioataque);
 	void atacarDragones(cDragon* victima); // ataca un dragon, le baja la vida con el daño, si la vida de este se vuelve cero va a muertito
-	bool baja();
 	string get_nombre() { return nombre; };
 	void set_nombre(string nombrecito) { nombre = nombrecito; };
 	string get_apellido() { return apellido; };

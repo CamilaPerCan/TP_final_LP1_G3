@@ -9,24 +9,17 @@ class cJinete
 	string apodo;
 	string fechaNac;
 	string caracFisicas;
-	string puestoGuerra;
-	int vida; // 0-100
 	int nivel;
 	cDragon* dragoncito; 
 public: 
-	cJinete(string apodin, string cumple, string caracteristicas, string puesto, int nuevaVida,
+	cJinete(string apodin, string cumple, string caracteristicas,
 		int nuevoNivel, cDragon nuevoDragon) ;
-	bool baja();
 	string get_apodo() { return apodo; };
 	void set_apodo(string apodin) { apodo = apodin; };
 	string get_fechaNac() { return fechaNac; };
 	void set_fechaNac(string cumple) { fechaNac = cumple; };
 	string get_caracFisicas() { return caracFisicas; };
 	void set_caracFisicas(string caracteristicas) { caracFisicas = caracteristicas; };
-	string get_puestoGuerra() { return puestoGuerra; };
-	void set_puestoGuerra(string puesto) { puestoGuerra = puesto; };
-	int get_vida() { return vida; };
-	void set_vida(int nuevaVida) { vida = nuevaVida; };
 	int get_nivel() { return nivel; };
 	int entrenar(int nuevoNivel) { nivel = nuevoNivel; }; // set_nivel
 	~cJinete() {};

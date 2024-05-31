@@ -15,6 +15,7 @@ public:
 	void set_vida(int nuevaVida) { vida = nuevaVida; };
 	string trabajar() { return puestoGuerra; }; // get de puesto de guerra
 	void set_puestoGuerra(string puestito) { puestoGuerra = puestito; };
+	bool baja();
 	~cCiudadano() {};
 };
 
