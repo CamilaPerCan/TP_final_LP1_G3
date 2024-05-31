@@ -1,15 +1,13 @@
 #include "cDragon.h"
 
-cDragon::cDragon(string nomb, string carac, string ejemplar, string tam, bool nuevoEstado, int nuevaVida, int ofensiva, nformaAtaque
-    formula1) {
+cDragon::cDragon(string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito)
+{
 	nombre = nomb;
 	caracteristica = carac;
-	tipo = ejemplar;
 	tamanio = tam;
 	estado = nuevoEstado;
 	vida = nuevaVida;
-	ataque = ofensiva;
-	formaAtaque = formula1;
+	nivel = nivelcito;
 }
 
 bool cDragon::baja()

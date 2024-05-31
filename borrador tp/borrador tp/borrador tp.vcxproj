@@ -133,6 +133,9 @@
     <ClCompile Include="cCiudadano.cpp" />
     <ClCompile Include="cVikingo.cpp" />
     <ClCompile Include="comunales.cpp" />
+    <ClCompile Include="dElectro.cpp" />
+    <ClCompile Include="dFuego.cpp" />
+    <ClCompile Include="dVeneno.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cDragon.h" />
@@ -140,6 +143,9 @@
     <ClInclude Include="cCiudadano.h" />
     <ClInclude Include="cVikingo.h" />
     <ClInclude Include="comunales.h" />
+    <ClInclude Include="dElectro.h" />
+    <ClInclude Include="dFuego.h" />
+    <ClInclude Include="dVeneno.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
