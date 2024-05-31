@@ -22,5 +22,8 @@ public:
 	void set_danio(int ataque) { danio = ataque; };
 	~cVikingo() {};
 	friend ostream& operator<<(ostream &datito, cVikingo &vikingito);
+	void operator+(cDragon *cadaver) {
+		muertitos.push_back(cadaver);
+	}
 };
 

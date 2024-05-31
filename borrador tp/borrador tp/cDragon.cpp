@@ -10,6 +10,10 @@ cDragon::cDragon(string nomb, string carac, etamanio tam, bool nuevoEstado, int 
 	nivel = nivelcito;
 }
 
+void cDragon::set_estado(bool)
+{
+}
+
 bool cDragon::baja()
 {
     if (vida == 0)

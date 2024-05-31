@@ -2,6 +2,6 @@
 #include "cDragon.h"
 class dVeneno : public cDragon
 {
-
+	
 };
 

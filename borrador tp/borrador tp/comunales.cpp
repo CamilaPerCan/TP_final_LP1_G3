@@ -1,4 +1,5 @@
 #include "comunales.h"
+#include <list>
 
 //hacer get de cant en jinete y vikingo
 
@@ -12,3 +13,4 @@ ostream& operator<<(ostream& datito, cJinete& jinetito)
 	datito << jinetito.nombre << ", " << jinetito.caracFisicas << ", " << jinetito.cant << ", " << jinetito.vida << ", " << jinetito.puestoGuerra << endl;
 	return datito;
 }
+

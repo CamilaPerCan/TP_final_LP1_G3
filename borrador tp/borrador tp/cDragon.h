@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <list>
 using namespace std;
 
 #include "cCiudadano.h"
@@ -30,7 +31,6 @@ public:
 	void set_vida(int nuevaVida) { vida = nuevaVida; };
 	int get_nivel() { return nivel; };
 	void set_nivel(int nivelcito) { nivel = nivelcito; };
-	bool baja();
-	virtual 
-	virtual ~cDragon() {};
+	bool baja(); 
+	~cDragon() {};
 };
