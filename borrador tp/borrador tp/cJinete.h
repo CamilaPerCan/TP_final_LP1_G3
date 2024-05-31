@@ -4,23 +4,23 @@
 #include "cDragon.h"
 using namespace std;
 
-class cJinete
+class cJinete : public cCiudadano
 {
-	string apodo;
-	string fechaNac;
 	string caracFisicas;
 	int nivel;
+	static int cant;
 	cDragon* dragoncito; 
 public: 
-	cJinete(string apodin, string cumple, string caracteristicas,
-		int nuevoNivel, cDragon nuevoDragon) ;
-	string get_apodo() { return apodo; };
-	void set_apodo(string apodin) { apodo = apodin; };
-	string get_fechaNac() { return fechaNac; };
-	void set_fechaNac(string cumple) { fechaNac = cumple; };
+	cJinete(string caracteristicas, int nuevoNivel, cDragon *nuevoDragon, int vidaa, string laburo, string nombrecin) : cCiudadano(vidaa, laburo, nombrecin) {
+		caracFisicas = caracteristicas;
+		nivel = nuevoNivel;
+		dragoncito = nuevoDragon;
+		cant++;
+	};
 	string get_caracFisicas() { return caracFisicas; };
 	void set_caracFisicas(string caracteristicas) { caracFisicas = caracteristicas; };
 	int get_nivel() { return nivel; };
 	int entrenar(int nuevoNivel) { nivel = nuevoNivel; }; // set_nivel
+	friend ostream& operator<<(ostream& datito, cJinete& jinetito);
 	~cJinete() {};
 };

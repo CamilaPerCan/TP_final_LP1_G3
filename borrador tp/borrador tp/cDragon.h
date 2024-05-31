@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+#include "cCiudadano.h"
 enum nformaAtaque {FUEGO=1, AGUA=2, AIRE=3, TIERRA=4, VENENO=5}; 
 
 class cDragon
