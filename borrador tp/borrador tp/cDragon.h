@@ -32,5 +32,5 @@ public:
 	int get_nivel() { return nivel; };
 	void set_nivel(int nivelcito) { nivel = nivelcito; };
 	bool baja(); 
-	~cDragon() {};
+	virtual ~cDragon() {};
 };
