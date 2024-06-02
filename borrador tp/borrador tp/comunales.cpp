@@ -14,3 +14,6 @@ ostream& operator<<(ostream& datito, cJinete& jinetito)
 	return datito;
 }
 
+int combate(cVikingo* vikingos, cDragon* dragones, cJinete* jinetes) {
+	return 0;
+}
