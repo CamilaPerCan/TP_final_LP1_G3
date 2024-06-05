@@ -10,9 +10,10 @@ ostream& operator<<(ostream &datito, cVikingo& vikingito) {
 
 ostream& operator<<(ostream& datito, cJinete& jinetito)
 {
-	datito << jinetito.nombre << ", " << jinetito.caracFisicas << ", " << jinetito.cant << ", " << jinetito.vida << ", " << jinetito.puestoGuerra << endl;
+	datito << jinetito.nombre << ", " << jinetito.caracFisicas << ", " << jinetito.cant << ", " << jinetito.nivel << ", " << jinetito.puestoGuerra << endl;
 	return datito;
 }
+
 
 int combate(cVikingo* vikingos, cDragon* dragones, cJinete* jinetes) {
 	return 0;

@@ -11,9 +11,8 @@ class cJinete : public cCiudadano
 	static int cant;
 	cDragon* dragoncito; 
 public: 
-	cJinete(string caracteristicas, int nuevoNivel, cDragon *nuevoDragon, int vidaa, string laburo, string nombrecin) : cCiudadano(vidaa, laburo, nombrecin) {
+	cJinete(string caracteristicas, cDragon *nuevoDragon, int vidaa, string laburo, string nombrecin) : cCiudadano(vidaa, laburo, nombrecin) {
 		caracFisicas = caracteristicas;
-		nivel = nuevoNivel;
 		dragoncito = nuevoDragon;
 		cant++;
 	};

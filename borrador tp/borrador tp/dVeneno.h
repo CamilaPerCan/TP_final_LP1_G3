@@ -4,11 +4,14 @@
 #include <list>
 using namespace std;
 
-#include "cDragon.h"
+#include "dFuego.h"
+
 class dVeneno : public cDragon
 {
-	
+	int toxicidad;
+
 public:
-	dVeneno(string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito);
+	dVeneno(int toxica, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito);
+	void atacar(cVikingo* victima);
 };
 

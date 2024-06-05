@@ -4,12 +4,15 @@
 #include <list>
 using namespace std;
 
-#include "cDragon.h"
+#include "dElectro.h"
+
 class dFuego :public cDragon
 {
-
+	int fueguitos;
+	int intensidad;
 public:
-	dFuego(string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito) ;
+	dFuego(int fuegos, int intensa, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito) ;
+	void atacar(cVikingo* victima) ;
 	~dFuego() {};
 
 };
