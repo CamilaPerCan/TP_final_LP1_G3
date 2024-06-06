@@ -26,7 +26,7 @@ void cVikingo::atacarJinete(cJinete* victima) {
 		victima->set_vida(victima->get_vida() - this->danio);
 	}
 	else {
-		victima->set_vida(0);
-		cout << victima->get_nombre() << "ha muerto:(." << endl;
+		victima->set_vida(1);
+		cout << victima->get_nombre() << "tiene 1 de vida, se ha ido al hospital en ambulancia. IUIUIUIUIU" << endl;
 	}
 }
