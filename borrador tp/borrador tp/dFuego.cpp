@@ -1,4 +1,5 @@
 #include "dFuego.h"
+
 dFuego::dFuego(int fuegos, int intensa, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito) : cDragon(nomb, carac, tam, nuevoEstado, nuevaVida, nivelcito) {
 	this->fueguitos = fuegos;
 	this->intensidad = intensa;
@@ -15,7 +16,7 @@ void dFuego::atacar(cVikingo* victima) {
 			cout << victima->get_nombre() << "ha muerto:(." << endl;
 		}
 		this->fueguitos = this->fueguitos - 1;
-		cout << "A " << this->nombre << " le quedan " << this->fueguitos << " bolas de fuego." << endl;
+		cout << "Has asesinado a" << victima->get_nombre() << "!!" << endl << "FUERZA BARBIE, GUERRERA." << endl;
 	}
 	else cout << "Oh no, " << this->nombre << " no tiene suficientes bolas de fuego." << endl;
 }

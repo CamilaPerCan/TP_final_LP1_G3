@@ -3,8 +3,13 @@
 int cVikingo::cant = 0;
 
 void cVikingo::atacarDragon(cJinete* victima) {
+
 	if (victima->get_Dragon()->get_vida() == 0)
 		atacarJinete(victima);
+
+	if(victima->get_Dragon() == NULL)
+		throw new exception("Este jinete no tiene dragon domado");
+
 	if (this->danio < victima->get_Dragon()->get_vida()) {
 		victima->get_Dragon()->set_vida(victima->get_Dragon()->get_vida() - this->danio);
 	}

@@ -10,6 +10,6 @@ void dElectro::atacar(cVikingo* victima) {
 	}
 	else {
 		victima->set_vida(0);
-		cout << victima->get_nombre() << "ha muerto:(." << endl;
+		cout << "Has asesinado a" << victima->get_nombre()<< "!!" << endl <<"FUERZA BARBIE, GUERRERA."<< endl;
 	}
 }

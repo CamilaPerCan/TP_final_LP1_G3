@@ -9,10 +9,14 @@ using namespace std;
 class dFuego :public cDragon
 {
 	int fueguitos;
+
 	int intensidad;
+
 public:
-	dFuego(int fuegos, int intensa, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito) ;
-	void atacar(cVikingo* victima) ;
+	dFuego(int fuegos, int intensa, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito);
+
+	void atacar(cVikingo* victima);
+
 	~dFuego() {};
 
 };
