@@ -16,10 +16,21 @@ ostream& operator<<(ostream& datito, cJinete& jinetito)
 	return datito;
 }
 
-int combate(cVikingo* vikingos, cJinete* jinetes) {
-	int movimientos=0;
-	int primero=0;
-	while (movimientos==0) {
+int combate(list<cVikingo*>* vikingos, int cantV, list <cJinete*>* jinetes, int cantJ) {
+	
+	int vidaV = 0;
+	list<cVikingo*>::iterator it = vikingos->begin();
+	for (it = vikingos->begin(); it != vikingos->end(); it++) {
+		vidaV = vidaV + (*it)->get_vida();
+	}
+
+	int vidaJ = 0;
+	list<cJinete*>::iterator it1 = jinetes->begin();
+	for (it1 = jinetes->begin(); it1 != jinetes->end(); it1++) {
+		vidaJ = vidaJ + (*it1)->get_vida();
+	}
+
+	while (vidaV!=0 && vidaJ!=0) {
 			
 	}
 	return 0;

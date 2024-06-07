@@ -16,7 +16,7 @@ void cVikingo::atacarDragon(cJinete* victima) {
 	else {
 		victima->get_Dragon()->set_vida(0);
 		cout << victima->get_Dragon()->get_nombre() << "ha muerto:(." << endl;
-		this->muertitos.push_back(victima->get_Dragon());
+		*this + victima->get_Dragon();
 		cout << victima->get_nombre() << "está desprotegido";
 	}
 }

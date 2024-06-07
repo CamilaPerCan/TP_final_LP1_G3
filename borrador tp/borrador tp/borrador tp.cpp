@@ -14,6 +14,7 @@ int main()
     cJinete jinete1("lindo", dragoncito, 100, "corredor", "mcqueen");
     //cJinete j("a", 2, 2, "a", "a");
     cout << jinete1;
+    delete dragoncito;
     return 0;
 }
 
