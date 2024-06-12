@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include "cDragon.h"
+#include <stdlib.h>
+#include <time.h>
 using namespace std;
 
 class cJinete : public cCiudadano
@@ -20,6 +22,7 @@ public:
 	void set_caracFisicas(string caracteristicas) { caracFisicas = caracteristicas; };
 	int get_nivel() { return nivel; };
 	cDragon* get_Dragon() { return dragoncito; };
+	void domar_Dragon(list <cDragon*>* dragones, int cantD); // set_dragon
 	int entrenar(int nuevoNivel) { nivel = nuevoNivel; }; // set_nivel
 	friend ostream& operator<<(ostream& datito, cJinete& jinetito);
 	~cJinete() {};
