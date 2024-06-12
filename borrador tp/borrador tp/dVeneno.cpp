@@ -4,12 +4,12 @@ dVeneno::dVeneno(int toxica, string nomb, string carac, etamanio tam, bool nuevo
 }
 
 void dVeneno::atacar(cVikingo* victima) {
-	cout << this->nombre << "está envenenando a" << victima->get_nombre() << endl;
+	cout << this->nombre << "está envenenando a " << victima->get_nombre() << endl;
 	if (this->toxicidad < victima->get_vida()) {
 		victima->set_vida(victima->get_vida() - this->toxicidad);
 	}
 	else {
 		victima->set_vida(0);
-		cout << "Has asesinado a" << victima->get_nombre() << "!!" << endl << "FUERZA BARBIE, GUERRERA." << endl;
+		cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << "FUERZA BARBIE, GUERRERA." << endl;
 	}
 }

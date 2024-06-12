@@ -9,8 +9,10 @@ using namespace std;
 class dElectro : public cDragon
 {
 	int corriente;
+	int energia; //cantidad de descargas que tiene acumuladas ¿?
+	int maxEnergia; //cant maxima de descargas q puede hacer
 public:
-	dElectro(int corriente1, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito);
+	dElectro(int corriente1, int energia1, int max, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito);
 	void atacar(cVikingo* victima);
 	
 	~dElectro() {};

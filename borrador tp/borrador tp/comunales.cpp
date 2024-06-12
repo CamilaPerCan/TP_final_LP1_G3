@@ -5,8 +5,8 @@
 //combate es para que los vikingos se peleen con los jinetes y sus respectivos jinetes
 //atraco se encarga de que los vikingos ataquen a los edificios y saca puntos al usuario
 
-ostream& operator<<(ostream &datito, cVikingo& vikingito) {
-	datito << vikingito.nombre << ", " <<  vikingito.danio << ", " << vikingito.cant << ", " << vikingito.vida << ", " << vikingito.trabajar() << endl;
+ostream& operator<<(ostream &datito, cVikingo& vikinguito) {
+	datito << vikinguito.nombre << ", " <<  vikinguito.danio << ", " << vikinguito.cant << ", " << vikinguito.vida << ", " << vikinguito.trabajar() << endl;
 	return datito;
 }
 
