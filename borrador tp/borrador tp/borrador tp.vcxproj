@@ -129,8 +129,10 @@
   <ItemGroup>
     <ClCompile Include="borrador tp.cpp" />
     <ClCompile Include="cDragon.cpp" />
+    <ClCompile Include="cEdificio.cpp" />
     <ClCompile Include="cJinete.cpp" />
     <ClCompile Include="cCiudadano.cpp" />
+    <ClCompile Include="cUsuario.cpp" />
     <ClCompile Include="cVikingo.cpp" />
     <ClCompile Include="comunales.cpp" />
     <ClCompile Include="dElectro.cpp" />
@@ -139,8 +141,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cDragon.h" />
+    <ClInclude Include="cEdificio.h" />
     <ClInclude Include="cJinete.h" />
     <ClInclude Include="cCiudadano.h" />
+    <ClInclude Include="cUsuario.h" />
     <ClInclude Include="cVikingo.h" />
     <ClInclude Include="comunales.h" />
     <ClInclude Include="dElectro.h" />

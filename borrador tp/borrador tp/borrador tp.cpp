@@ -3,6 +3,7 @@
 #include <string>
 #include <list>
 #include "dVeneno.h"
+#include <exception>
 
 
 using namespace std;
@@ -45,15 +46,21 @@ int main()
     dragones.push_back(dragoncito4);
     dragones.push_back(dragoncito5);
 
-    //jinetes.push_back(jinete1);
+    jinetes.push_back(&jinete1);
     jinetes.push_back(&jinete2);
     jinetes.push_back(&jinete3);
     jinetes.push_back(&jinete4);
     jinetes.push_back(&jinete5);
     
-    domar_Dragon(&dragones, jinete1);
-    cout << jinete1;
-
+    try {
+        domar_Dragon(&dragones, jinete1);
+        cout << jinete1;
+    }
+    catch(const exception *e){
+        cout << e->what();
+        delete e;
+    }
+    
 
 
     delete dragoncito;

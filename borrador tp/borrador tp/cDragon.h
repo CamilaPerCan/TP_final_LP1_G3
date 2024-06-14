@@ -48,3 +48,4 @@ public:
 	friend void domar_Dragon(list<cDragon*>* dragones, cJinete &jinetin);
 	virtual ~cDragon() {};
 };
+//funcion polimorfica de ir al comedor, xq le sube fueguitos, etc
