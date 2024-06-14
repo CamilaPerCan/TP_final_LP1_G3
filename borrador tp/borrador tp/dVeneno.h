@@ -9,10 +9,13 @@ using namespace std;
 class dVeneno : public cDragon
 {
 	int toxicidad;
+	int litros;
+	int max_litros;
 
 public:
 
 	dVeneno(int toxica, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida);
+	void comer(int comidita);
 
 	void atacar(cVikingo* victima);
 

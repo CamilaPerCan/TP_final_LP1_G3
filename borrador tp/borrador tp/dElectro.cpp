@@ -20,3 +20,11 @@ void dElectro::atacar(cVikingo* victima) {
 	}
 	else cout << "Oh no, " << this->nombre << " no tiene suficientes descargas." << endl;
 }
+
+
+void dElectro::comer(int comidita) {
+	while (this->energia<this->maxEnergia && comidita!=0 ) {
+		this->energia++;
+		comidita--;
+	}
+}

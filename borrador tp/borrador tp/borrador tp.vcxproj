@@ -138,6 +138,9 @@
     <ClCompile Include="dElectro.cpp" />
     <ClCompile Include="dFuego.cpp" />
     <ClCompile Include="dVeneno.cpp" />
+    <ClCompile Include="iComedor.cpp" />
+    <ClCompile Include="iGimnasio.cpp" />
+    <ClCompile Include="iHospital.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cDragon.h" />
@@ -150,6 +153,9 @@
     <ClInclude Include="dElectro.h" />
     <ClInclude Include="dFuego.h" />
     <ClInclude Include="dVeneno.h" />
+    <ClInclude Include="iComedor.h" />
+    <ClInclude Include="iGimnasio.h" />
+    <ClInclude Include="iHospital.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

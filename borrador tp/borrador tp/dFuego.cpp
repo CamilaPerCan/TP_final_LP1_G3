@@ -21,3 +21,10 @@ void dFuego::atacar(cVikingo* victima) {
 	}
 	else cout << "Oh no, " << this->nombre << " no tiene suficientes bolas de fuego." << endl;
 }
+
+void dFuego::comer(int comidita) {
+	while (this->fueguitos < this->fueguitos && comidita != 0) {
+		this->fueguitos++;
+		comidita--;
+	}
+}

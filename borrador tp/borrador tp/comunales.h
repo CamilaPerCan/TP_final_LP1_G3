@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 #include "dVeneno.h"
+//lo sacamos de google para poder colorear :)
 #define RESET       "\033[0m"
 #define RED_TEXT    "\033[31m"
 #define GREEN_TEXT  "\033[32m"

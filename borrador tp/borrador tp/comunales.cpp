@@ -12,7 +12,7 @@ ostream& operator<<(ostream &datito, cVikingo& vikinguito) {
 
 ostream& operator<<(ostream& datito, cJinete& jinetito)
 {
-	datito << jinetito.nombre << ", " << jinetito.dragoncito->get_nombre() << jinetito.caracFisicas << ", " << jinetito.cant << ", " << jinetito.nivel << ", " << jinetito.puestoGuerra << endl;
+	datito << jinetito.nombre << ", " << jinetito.dragoncito->get_nombre() << jinetito.caracFisicas << ", " << jinetito.cant << ", " << jinetito.puestoGuerra << endl;
 	return datito;
 }
 
@@ -56,3 +56,24 @@ void domar_Dragon(list<cDragon*>* dragones, cJinete &jinetin)
 		throw new exception("No hay dragones no domados :( ");
 	}
 }
+
+/* std::cout << "   \\\\|||//    " << std::endl;
+    std::cout << "  (  o o  )   " << std::endl;
+    std::cout << "ooO--(_)--Ooo " << std::endl;
+
+
+	std::cout << "                 _______________    " << std::endl;
+	std::cout << "          ,===:'.,            `-._ " << std::endl;
+	std::cout << "               `:.`---.__         `-._ " << std::endl;
+	std::cout << "                 `:.     `--.         `-. " << std::endl;
+	std::cout << "                   \\.        `.         `-. " << std::endl;
+	std::cout << "           (,,(,    \\.         `.   ____,-`.," << std::endl;
+	std::cout << "        (,'     `/   \\.   ,--.___`.' " << std::endl;
+	std::cout << "    ,  ,'  ,--.  `,   \\.;'         ` " << std::endl;
+	std::cout << "     `{D, {    \\  :    \\;" << std::endl;
+	std::cout << "       V,,'    /  /    //" << std::endl;
+	std::cout << "       j;;    /  ,' ,-//.    ,---.      ," << std::endl;
+	std::cout << "       \\;'   /  ,' /  _  \\  /  _  \\   ,'/" << std::endl;
+	std::cout << "             \\   `'  / \\  `'  / \\  `.' /" << std::endl;
+	std::cout << "              `.___,'   `.__,'   `.__,'" << std::endl;
+*/
