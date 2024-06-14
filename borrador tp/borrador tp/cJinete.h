@@ -13,16 +13,16 @@ class cJinete : public cCiudadano
 	static int cant;
 	cDragon* dragoncito; 
 public: 
-	cJinete(string caracteristicas, cDragon *nuevoDragon, int vidaa, string laburo, string nombrecin) : cCiudadano(vidaa, laburo, nombrecin) {
+	cJinete(string caracteristicas, int vidaa, string laburo, string nombrecin) : cCiudadano(vidaa, laburo, nombrecin) {
 		caracFisicas = caracteristicas;
-		dragoncito = nuevoDragon;
+		dragoncito = NULL;
 		cant++;
 	};
 	string get_caracFisicas() { return caracFisicas; };
 	void set_caracFisicas(string caracteristicas) { caracFisicas = caracteristicas; };
 	int get_nivel() { return nivel; };
 	cDragon* get_Dragon() { return dragoncito; };
-	void domar_Dragon(list <cDragon*>* dragones, int cantD); // set_dragon
+	friend void domar_Dragon(list <cDragon*>* dragones, cJinete &jinetin); // set_dragon
 	int entrenar(int nuevoNivel) { nivel = nuevoNivel; }; // set_nivel
 	friend ostream& operator<<(ostream& datito, cJinete& jinetito);
 	~cJinete() {};

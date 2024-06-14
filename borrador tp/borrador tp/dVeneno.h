@@ -12,7 +12,7 @@ class dVeneno : public cDragon
 
 public:
 
-	dVeneno(int toxica, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito);
+	dVeneno(int toxica, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida);
 
 	void atacar(cVikingo* victima);
 

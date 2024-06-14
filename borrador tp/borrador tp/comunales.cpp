@@ -12,7 +12,7 @@ ostream& operator<<(ostream &datito, cVikingo& vikinguito) {
 
 ostream& operator<<(ostream& datito, cJinete& jinetito)
 {
-	datito << jinetito.nombre << ", " << jinetito.caracFisicas << ", " << jinetito.cant << ", " << jinetito.nivel << ", " << jinetito.puestoGuerra << endl;
+	datito << jinetito.nombre << ", " << jinetito.dragoncito->get_nombre() << jinetito.caracFisicas << ", " << jinetito.cant << ", " << jinetito.nivel << ", " << jinetito.puestoGuerra << endl;
 	return datito;
 }
 
@@ -34,4 +34,25 @@ int combate(list<cVikingo*>* vikingos, int cantV, list <cJinete*>* jinetes, int 
 			
 	}
 	return 0;
+}
+
+void domar_Dragon(list<cDragon*>* dragones, cJinete &jinetin)
+{
+	list<cDragon*>::iterator it = dragones->begin();
+	
+	srand(time(NULL));
+	
+	int cant = 0;
+	while (cant==0&&it!=dragones->end()) {
+		if (!(*it)->estado) {
+			jinetin.dragoncito = (*it);
+			(*it)->estado = 1;
+			(*it)->nivel = rand() % 27 + 1;
+			cant++;
+		}
+		it++;
+	}
+	if (cant == 0) {
+		throw new exception("No hay dragones no domados :( ");
+	}
 }

@@ -9,3 +9,4 @@ ostream& operator<<(ostream& datito, cVikingo& vikinguito);
 ostream& operator<<(ostream& datito, cJinete& jinetito);
 
 int combate(cVikingo *vikingos, cJinete *jinetes);
+void domar_Dragon(list<cDragon*>* dragones, int cantD);

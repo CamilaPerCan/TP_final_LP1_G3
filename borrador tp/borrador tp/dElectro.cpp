@@ -1,5 +1,5 @@
 #include "dElectro.h"
-dElectro::dElectro(int corriente1, int energia1, int max, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito) : cDragon(nomb, carac, tam, nuevoEstado, nuevaVida, nivelcito) {
+dElectro::dElectro(int corriente1, int energia1, int max, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida) : cDragon(nomb, carac, tam, nuevoEstado, nuevaVida) {
 	this->corriente = corriente1;
 	this->energia = energia1;
 	this->maxEnergia = max;

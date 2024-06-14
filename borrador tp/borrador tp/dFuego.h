@@ -13,7 +13,7 @@ class dFuego :public cDragon
 	int intensidad;
 
 public:
-	dFuego(int fuegos, int max, int intensa, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito);
+	dFuego(int fuegos, int max, int intensa, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida);
 
 	void atacar(cVikingo* victima);
 

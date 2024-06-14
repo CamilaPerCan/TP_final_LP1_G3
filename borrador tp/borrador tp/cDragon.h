@@ -5,6 +5,7 @@
 using namespace std;
 
 #include "cCiudadano.h"
+class cJinete;
 enum etamanio {MINI=1, CHICO=2, MEDIANO=3, GRANDE=4, ENORME=5}; 
 
 class cVikingo;
@@ -17,7 +18,7 @@ protected:
 	int vida; // 0-100
 	int nivel;
 public:
-	cDragon(string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito);
+	cDragon(string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida);
 	string get_nombre() 
 	{ return nombre; };
 	void alta_nombre(string nuevoNombre)
@@ -44,5 +45,6 @@ public:
 	{ nivel = nivelcito; };
 	bool baja();
 	virtual void atacar(cVikingo* victima) =0;
+	friend void domar_Dragon(list<cDragon*>* dragones, cJinete &jinetin);
 	virtual ~cDragon() {};
 };

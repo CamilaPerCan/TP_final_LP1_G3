@@ -1,6 +1,6 @@
 #include "dFuego.h"
 
-dFuego::dFuego(int fuegos, int max, int intensa, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida, int nivelcito) : cDragon(nomb, carac, tam, nuevoEstado, nuevaVida, nivelcito) {
+dFuego::dFuego(int fuegos, int max, int intensa, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida) : cDragon(nomb, carac, tam, nuevoEstado, nuevaVida) {
 	this->fueguitos = fuegos;
 	this->maxFueguitos = max;
 	this->intensidad = intensa;
