@@ -16,7 +16,7 @@ ostream& operator<<(ostream& datito, cJinete& jinetito)
 	return datito;
 }
 
-int combate(list<cVikingo*>* vikingos, int cantV, list <cJinete*>* jinetes, int cantJ) {
+int combate(list<cVikingo*>* vikingos, list <cJinete*>* jinetes) {
 	
 	int vidaV = 0;
 	list<cVikingo*>::iterator it = vikingos->begin();

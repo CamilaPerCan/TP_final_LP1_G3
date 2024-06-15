@@ -45,12 +45,13 @@ public:
 	{ nivel = nivelcito; };
 	bool baja();
 
-
 	virtual void atacar(cVikingo* victima) = 0;
-	friend void domar_Dragon(list<cDragon*>* dragones, cJinete &jinetin);
 	virtual void comer(int comidita) = 0;
-
+	virtual void entrenar(int numero) = 0;// sube de nivel al dragon y le da mayor capacidad;
 
 	virtual ~cDragon() {};
+
+	friend void domar_Dragon(list<cDragon*>* dragones, cJinete& jinetin);
+	
 };
 //funcion polimorfica de ir al comedor, xq le sube fueguitos, etc

@@ -20,7 +20,9 @@ public:
 	string get_caracFisicas() { return caracFisicas; };
 	void set_caracFisicas(string caracteristicas) { caracFisicas = caracteristicas; };
 	cDragon* get_Dragon() { return dragoncito; };
-	friend void domar_Dragon(list <cDragon*>* dragones, cJinete &jinetin); // set_dragon
-	friend ostream& operator<<(ostream& datito, cJinete& jinetito);
+	
 	~cJinete() {};
+
+	friend void domar_Dragon(list <cDragon*>* dragones, cJinete& jinetin); // set_dragon
+	friend ostream& operator<<(ostream& datito, cJinete& jinetito);
 };

@@ -17,5 +17,5 @@ using namespace std;
 ostream& operator<<(ostream& datito, cVikingo& vikinguito);
 ostream& operator<<(ostream& datito, cJinete& jinetito);
 
-int combate(cVikingo *vikingos, cJinete *jinetes);
-void domar_Dragon(list<cDragon*>* dragones, int cantD);
+int combate(list<cVikingo*>* vikingos, list <cJinete*>* jinetes);
+void domar_Dragon(list<cDragon*>* dragones, cJinete& jinetin);

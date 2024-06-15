@@ -4,7 +4,15 @@
 #include <list>
 #include "dVeneno.h"
 #include <exception>
-
+#define RESET       "\033[0m"
+#define RED_TEXT    "\033[31m"
+#define GREEN_TEXT  "\033[32m"
+#define BLUE_TEXT   "\033[34m"
+#define BLACK_BG    "\033[40m"
+#define RED_BG      "\033[41m"
+#define GREEN_BG    "\033[42m"
+#define BLUE_BG     "\033[44m"
+#define ORANGE_TEXT "\033[33m"
 
 using namespace std;
 class cJinete;
@@ -60,8 +68,6 @@ int main()
         cout << e->what();
         delete e;
     }
-    
-
 
     delete dragoncito;
     delete dragoncito2;

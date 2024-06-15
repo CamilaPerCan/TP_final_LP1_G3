@@ -4,13 +4,13 @@ dVeneno::dVeneno(int toxica, string nomb, string carac, etamanio tam, bool nuevo
 }
 
 void dVeneno::atacar(cVikingo* victima) {//bajar y poner un if
-	cout << this->nombre << "está envenenando a " << victima->get_nombre() << endl;
+	cout <<GREEN_BG<<BLACK_TEXT<< this->nombre << "está envenenando a " << victima->get_nombre() << RESET<< endl;
 	if (this->toxicidad < victima->get_vida()) {
 		victima->set_vida(victima->get_vida() - this->toxicidad);
 	}
 	else {
 		victima->set_vida(0);
-		cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << "FUERZA BARBIE, GUERRERA." << endl;
+		cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << RED_TEXT << "FUERZA BARBIE, GUERRERA." << RESET<<endl;
 	}
 }
 
@@ -19,4 +19,10 @@ void dVeneno::comer(int comidita) {
 		this->litros++;
 		comidita--;
 	}
+	cout << this->nombre << "ha comido y llenado su tanque de energía. Ahora tiene " << this->litros << "litros de veneno para acabar con sus enemigos" << endl;
+
+}
+
+void dVeneno::entrenar(int numero) {
+	this->max_litros = this->max_litros + numero;
 }

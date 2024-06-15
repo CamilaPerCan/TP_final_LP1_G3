@@ -17,14 +17,17 @@ public:
 		this->danio = danioataque;
 		cant++;
 	};
+	int get_danio() { return danio; };
+	void set_danio(int ataque) { danio = ataque; };
+
 	void operator+(cDragon* cadaver) {
 		muertitos.push_back(cadaver);
 	}
 	void atacarDragon(cJinete* victima); // ataca un dragon, le baja la vida con el daño, si la vida de este se vuelve cero va a muertito
 	void atacarJinete(cJinete* victima); 
-	int get_danio() { return danio; };
-	void set_danio(int ataque) { danio = ataque; };
+
 	~cVikingo() {};
+
 	friend ostream& operator<<(ostream& datito, cVikingo& vikingito);
 	
 };
