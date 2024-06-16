@@ -12,7 +12,7 @@ ostream& operator<<(ostream &datito, cVikingo& vikinguito) {
 
 ostream& operator<<(ostream& datito, cJinete& jinetito)
 {
-	datito << jinetito.nombre << ", " << jinetito.dragoncito->get_nombre() << jinetito.caracFisicas << ", " << jinetito.cant << ", " << jinetito.puestoGuerra << endl;
+	datito << jinetito.nombre << ", " << jinetito.dragoncito->get_nombre() << ", " << jinetito.caracFisicas << ", " << jinetito.cant << ", " << jinetito.puestoGuerra << endl;
 	return datito;
 }
 

@@ -1,6 +1,8 @@
 #include "dVeneno.h"
-dVeneno::dVeneno(int toxica, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida) : cDragon(nomb, carac, tam, nuevoEstado, nuevaVida) {
+dVeneno::dVeneno(int toxica, int litritos, int max, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida) : cDragon(nomb, carac, tam, nuevoEstado, nuevaVida) {
 	this->toxicidad = toxica;
+	this->litros = litritos;
+	this->max_litros = max;
 }
 
 void dVeneno::atacar(cVikingo* victima) {//bajar y poner un if

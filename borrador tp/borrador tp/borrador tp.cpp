@@ -3,7 +3,8 @@
 #include <string>
 #include <list>
 #include <chrono>
-#include "dVeneno.h"
+//#include "dVeneno.h"
+#include "iHospital.h"
 #include <exception>
 #define RESET       "\033[0m"
 #define RED_TEXT    "\033[31m"
@@ -25,10 +26,10 @@ int main()
     list<cVikingo*> vikingitos;
 
     cDragon* dragoncito1 = new dElectro(24, 4, 5, "a", " carac", MINI, 0, 100);
-    cDragon* dragoncito2 = new dVeneno(24, "a", " carac", MINI, 0, 100);
-    cDragon* dragoncito3 = new dFuego(24, 4, 5, "a", " carac", MINI, 0, 100);
-    cDragon* dragoncito4 = new dFuego(24, 4, 5, "a", " carac", MINI, 0, 100);
-    cDragon* dragoncito5 = new dElectro(24, 4, 5, "a", " carac", MINI, 0, 100);
+    cDragon* dragoncito2 = new dVeneno(24, 4, 5, "b", " carac", MINI, 0, 100);
+    cDragon* dragoncito3 = new dFuego(24, 4, 5, "c", " carac", MINI, 0, 100);
+    cDragon* dragoncito4 = new dFuego(24, 4, 5, "d", " carac", MINI, 0, 100);
+    cDragon* dragoncito5 = new dElectro(24, 4, 5, "e", " carac", MINI, 0, 100);
 
     dragones.push_back(dragoncito1);
     dragones.push_back(dragoncito2);
@@ -61,6 +62,10 @@ int main()
     vikingitos.push_back(&vikingo4);
     vikingitos.push_back(&vikingo5);
     vikingitos.push_back(&vikingo6);
+
+    iComedor comedor("h", 3, 15);
+    iGimnasio gimnasio(3, "h", 5, 15);
+    iHospital hospital("h", 5, 15);
     
     cUsuario YO(dragones, jinetitos, vikingitos);
 
@@ -79,6 +84,8 @@ int main()
     auto end_time = chrono::steady_clock::now();
     auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     cout << "Tiempo transcurrido: " << duration.count() << " milisegundos" << endl;
+
+    YO.atraco();
 
     delete dragoncito1;
     delete dragoncito2;

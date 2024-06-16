@@ -11,6 +11,10 @@ protected:
 	int capacidad;
 	int precio; //puntos necesarios para subir el nivel, va aumentando
 public:
-	virtual void aumentar(cJinete* jinete);
+	cEdificio(string nombrecin, int capa, int costo);
+
+	virtual void aumentar(cJinete* jinete)=0;
+	
+	virtual ~cEdificio() {};
 };
 

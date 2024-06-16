@@ -1,5 +1,10 @@
 #include "iGimnasio.h"
 
+iGimnasio::iGimnasio(int dispo, string nombrecin, int capa, int costo) : cEdificio(nombrecin, capa, costo)
+{
+	clases_disp = dispo;
+}
+
 void iGimnasio::aumentar(cJinete* jinete) {
 	if (this->clases_disp > 0) {
 		jinete->get_Dragon()->entrenar(this->capacidad);

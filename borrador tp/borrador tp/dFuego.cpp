@@ -23,7 +23,7 @@ void dFuego::atacar(cVikingo* victima) {
 }
 
 void dFuego::comer(int comidita) {
-	while (this->fueguitos < this->fueguitos && comidita != 0) {
+	while (this->fueguitos < this->maxFueguitos && comidita != 0) {
 		this->fueguitos++;
 		comidita--;
 	}

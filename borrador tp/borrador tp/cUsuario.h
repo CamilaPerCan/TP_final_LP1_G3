@@ -23,7 +23,7 @@ public:
 
 	void combate();
 	void no_combate() {};
-	void atraco() {};
+	void atraco();
 
 	int get_puntos() { return puntos; };
 	void set_puntos(int puntitos) { puntos = puntos + puntitos; };

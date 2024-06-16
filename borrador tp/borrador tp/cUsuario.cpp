@@ -37,5 +37,19 @@ void cUsuario::domar_Dragon( cJinete * jinetito)
 void cUsuario::combate() {
 	list<cJinete*>::iterator it = this->jinetes.begin();
 	this->domar_Dragon((*it));
-	cout << (*it) << endl;
-};
+	cout << *(*it) << endl;
+}
+void cUsuario::atraco()
+{
+	srand(time(NULL));
+
+	int robados = rand() % this->puntos + 1;
+
+	if (robados < puntos) {
+		this->puntos = this->puntos - robados;
+		cout << "Oh no, un grupo de vikingos ataco la aldea cuando estaba desprotegida y se robaron " << robados << " puntos." << endl
+			<< "Le quedan " << this->puntos << " puntos." << endl;
+	}
+
+}
+;
