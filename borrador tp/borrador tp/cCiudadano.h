@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+#include "cUsuario.h"
 
 class cCiudadano
 {
@@ -20,5 +20,7 @@ public:
 	string get_nombre() { return nombre; };
 	bool baja();
 	virtual ~cCiudadano() {};
+
+	friend  void cUsuario::combate();
 };
 

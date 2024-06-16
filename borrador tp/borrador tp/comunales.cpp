@@ -1,4 +1,4 @@
-#include "comunales.h"
+#include "dVeneno.h"
 #include <list>
 
 //hacer get de cant en jinete y vikingo
@@ -16,7 +16,7 @@ ostream& operator<<(ostream& datito, cJinete& jinetito)
 	return datito;
 }
 
-int combate(list<cVikingo*>* vikingos, list <cJinete*>* jinetes) {
+/*void combate(cUsusario &jugador) {
 	
 	int vidaV = 0;
 	list<cVikingo*>::iterator it = vikingos->begin();
@@ -28,34 +28,11 @@ int combate(list<cVikingo*>* vikingos, list <cJinete*>* jinetes) {
 	list<cJinete*>::iterator it1 = jinetes->begin();
 	for (it1 = jinetes->begin(); it1 != jinetes->end(); it1++) {
 		vidaJ = vidaJ + (*it1)->get_vida();
-	}
-
-	while (vidaV!=0 && vidaJ!=0) {
-			
-	}
+	}//por si queremos considerar la vida de los personajes
+	
 	return 0;
-}
+}*/
 
-void domar_Dragon(list<cDragon*>* dragones, cJinete &jinetin)
-{
-	list<cDragon*>::iterator it = dragones->begin();
-	
-	srand(time(NULL));
-	
-	int cant = 0;
-	while (cant==0&&it!=dragones->end()) {
-		if (!(*it)->estado) {
-			jinetin.dragoncito = (*it);
-			(*it)->estado = 1;
-			(*it)->nivel = rand() % 27 + 1;
-			cant++;
-		}
-		it++;
-	}
-	if (cant == 0) {
-		throw new exception("No hay dragones no domados :( ");
-	}
-}
 
 /* std::cout << "   \\\\|||//    " << std::endl;
     std::cout << "  (  o o  )   " << std::endl;

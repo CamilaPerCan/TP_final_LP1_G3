@@ -23,6 +23,7 @@ public:
 	
 	~cJinete() {};
 
-	friend void domar_Dragon(list <cDragon*>* dragones, cJinete& jinetin); // set_dragon
 	friend ostream& operator<<(ostream& datito, cJinete& jinetito);
+	friend void cUsuario::combate();
+	friend void cUsuario::domar_Dragon(cJinete* jinetin);
 };

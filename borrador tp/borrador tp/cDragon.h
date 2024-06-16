@@ -7,8 +7,9 @@ using namespace std;
 #include "cCiudadano.h"
 class cJinete;
 enum etamanio {MINI=1, CHICO=2, MEDIANO=3, GRANDE=4, ENORME=5}; 
-
 class cVikingo;
+
+
 class cDragon {
 protected:
 	string nombre;
@@ -51,7 +52,8 @@ public:
 
 	virtual ~cDragon() {};
 
-	friend void domar_Dragon(list<cDragon*>* dragones, cJinete& jinetin);
+	friend void cUsuario::domar_Dragon(cJinete *jinetin);
+	friend void cUsuario::combate();
 	
 };
 //funcion polimorfica de ir al comedor, xq le sube fueguitos, etc

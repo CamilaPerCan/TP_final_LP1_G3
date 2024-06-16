@@ -29,6 +29,7 @@ public:
 	~cVikingo() {};
 
 	friend ostream& operator<<(ostream& datito, cVikingo& vikingito);
+	friend void cUsuario::combate();
 	
 };
 

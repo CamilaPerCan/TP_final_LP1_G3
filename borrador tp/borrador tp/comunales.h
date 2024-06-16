@@ -2,8 +2,11 @@
 #include <iostream>
 #include<ostream>
 #include <string>
+#include <chrono>
 using namespace std;
-#include "dVeneno.h"
+class cVikingo;
+class cJinete;
+
 //lo sacamos de google para poder colorear :)
 #define RESET       "\033[0m"
 #define RED_TEXT    "\033[31m"
@@ -16,6 +19,3 @@ using namespace std;
 
 ostream& operator<<(ostream& datito, cVikingo& vikinguito);
 ostream& operator<<(ostream& datito, cJinete& jinetito);
-
-int combate(list<cVikingo*>* vikingos, list <cJinete*>* jinetes);
-void domar_Dragon(list<cDragon*>* dragones, cJinete& jinetin);
