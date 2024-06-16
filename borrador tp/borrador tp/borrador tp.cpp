@@ -24,6 +24,7 @@ int main()
     list<cDragon*> dragones;
     list<cJinete*> jinetitos;
     list<cVikingo*> vikingitos;
+    list<cEdificio*> aldea;
 
     cDragon* dragoncito1 = new dElectro(24, 4, 5, "a", " carac", MINI, 0, 100);
     cDragon* dragoncito2 = new dVeneno(24, 4, 5, "b", " carac", MINI, 0, 100);
@@ -66,8 +67,13 @@ int main()
     iComedor comedor("h", 3, 15);
     iGimnasio gimnasio(3, "h", 5, 15);
     iHospital hospital("h", 5, 15);
+
     
-    cUsuario YO(dragones, jinetitos, vikingitos);
+    aldea.push_back(&comedor);
+    aldea.push_back(&gimnasio);
+    aldea.push_back(&hospital);
+
+    cUsuario YO(dragones, jinetitos, vikingitos, aldea);
 
     auto start_time = chrono::steady_clock::now();
     YO.combate();

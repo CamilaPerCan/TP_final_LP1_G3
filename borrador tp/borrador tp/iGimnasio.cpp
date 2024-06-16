@@ -15,3 +15,8 @@ void iGimnasio::aumentar(cJinete* jinete) {
 		cout << "Ya has usado todas tus sesiones de entrenamiento, para entrenar a tu dragon tienes que comprar nuevas."<<endl;
 	}
 }
+
+void iGimnasio::subir_nivel()
+{
+	this->nivel++;
+}

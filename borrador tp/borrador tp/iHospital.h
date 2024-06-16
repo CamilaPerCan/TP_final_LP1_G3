@@ -7,6 +7,7 @@ public:
 	iHospital(string nombrecin, int capa, int costo);
 
 	void aumentar(cJinete* jinete);
+	void subir_nivel();
 
 	~iHospital() {};
 };

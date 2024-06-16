@@ -7,3 +7,8 @@ void iHospital::aumentar(cJinete* jinete) {
 		jinete->set_vida(this->capacidad);
 	}
 }
+
+void iHospital::subir_nivel()
+{
+	this->nivel++;
+}

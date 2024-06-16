@@ -7,6 +7,7 @@ using namespace std;
 class cJinete;
 class cVikingo;
 class cDragon;
+class cEdificio;
 
 class cUsuario
 {
@@ -17,9 +18,10 @@ class cUsuario
 	list<cVikingo*> vikingos;
 	list<cDragon*> dragones_salvajes;
 	list<cDragon*> dragones_domados;
+	list<cEdificio*> edificios;
 
 public:
-	cUsuario(list<cDragon*> &dragoncitos, list<cJinete*> &jinetitos, list<cVikingo*> &vikingitos);
+	cUsuario(list<cDragon*> &dragoncitos, list<cJinete*> &jinetitos, list<cVikingo*> &vikingitos, list<cEdificio*> &infraestructuras);
 
 	void combate();
 	void no_combate() {};

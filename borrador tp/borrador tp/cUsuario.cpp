@@ -1,11 +1,13 @@
-#include "dVeneno.h"
+//#include "dVeneno.h"
+#include "iHospital.h"
 
-cUsuario::cUsuario (list<cDragon*> &dragoncitos, list<cJinete*>& jinetitos, list<cVikingo*>& vikingitos) {
+cUsuario::cUsuario (list<cDragon*> &dragoncitos, list<cJinete*>& jinetitos, list<cVikingo*>& vikingitos, list<cEdificio*> &infraestructuras) {
 	
 	this->jinetes = jinetitos;
 	this->vikingos = vikingitos;
 	this->dragones_salvajes = dragoncitos;
 	this->dragones = dragoncitos;
+	this->edificios = infraestructuras;
 
 	this->cont_combate = 0;
 	this->puntos = 100;

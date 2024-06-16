@@ -3,7 +3,8 @@
 cEdificio::cEdificio(string nombrecin, int capa, int costo)
 {
 	nombre = nombrecin;
-	nivel = 0;
+	nivel = 1;
 	capacidad = capa;
 	precio = costo;
 }
+

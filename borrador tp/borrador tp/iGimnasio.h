@@ -8,6 +8,7 @@ public:
 	iGimnasio(int dispo, string nombrecin, int capa, int costo);
 
 	void aumentar(cJinete* jinete);
+	void subir_nivel();
 
 	~iGimnasio() {};
 };
