@@ -11,4 +11,9 @@ void iHospital::aumentar(cJinete* jinete) {
 void iHospital::subir_nivel()
 {
 	this->nivel++;
+	cout << "Has subido el nivel del hospital! Ahora esta en el nivel " << this->nivel << endl;
+	this->capacidad = this->capacidad + 5;
+	cout << "Has aumentado la capacidad de regenerar vida del hospital! Ahora la capacidad es " << this->capacidad << endl;
+	this->precio = this->precio + 15;
+	cout << "Ahora se necesitan " << this->precio << " para aumentar esta capacidad del hospital." << endl;
 }
