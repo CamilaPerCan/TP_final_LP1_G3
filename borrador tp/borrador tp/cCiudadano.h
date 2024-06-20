@@ -11,7 +11,6 @@ protected:
 	string puestoGuerra;
 	const string nombre;
 public:
-	//cCiudadano() {};
 	cCiudadano(int vidaa, string laburin, string nombre);
 	int get_vida() { return vida; };
 	void set_vida(int nuevaVida) { vida = nuevaVida; };

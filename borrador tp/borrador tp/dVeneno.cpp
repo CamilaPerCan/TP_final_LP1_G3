@@ -27,4 +27,5 @@ void dVeneno::comer(int comidita) {
 
 void dVeneno::entrenar(int numero) {
 	this->max_litros = this->max_litros + numero;
+	this->nivel = this->nivel + 1;
 }

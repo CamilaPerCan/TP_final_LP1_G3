@@ -16,7 +16,7 @@ using namespace std;
 class dElectro : public cDragon
 {
 	int corriente;
-	int energia; //cantidad de descargas que tiene acumuladas ¿?
+	int energia; //cantidad de descargas que tiene acumuladas 
 	int maxEnergia; //cant maxima de descargas q puede hacer
 
 public:

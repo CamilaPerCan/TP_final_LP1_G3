@@ -8,6 +8,7 @@ public:
 
 	void aumentar(cJinete* jinete);
 	void subir_nivel();
+	void bajar_nivel();
 
 	~iHospital() {};
 };

@@ -12,25 +12,23 @@ class cEdificio;
 class cUsuario
 {
 	int puntos;
-	int cont_combate;
 	list<cJinete*> jinetes;
 	list<cDragon*> dragones;
 	list<cVikingo*> vikingos;
 	list<cDragon*> dragones_salvajes;
 	list<cDragon*> dragones_domados;
 	list<cEdificio*> edificios;
+	
 
 public:
 	cUsuario(list<cDragon*> &dragoncitos, list<cJinete*> &jinetitos, list<cVikingo*> &vikingitos, list<cEdificio*> &infraestructuras);
 
 	void combate();
-	void no_combate() {};
+	void simulacion();
 	void atraco();
 
 	int get_puntos() { return puntos; };
 	void set_puntos(int puntitos) { puntos = puntos + puntitos; };
-	int get_cant() { return cont_combate; };
-	void set_cant(int n_cant) { cont_combate = n_cant; };
 	list<cJinete*> get_jinetes() { return this->jinetes; };
 	list<cDragon*> get_dragones() { return dragones; };
 	list<cVikingo*> get_vikingos() { return vikingos; };
@@ -41,6 +39,10 @@ public:
 	}
 
 	void domar_Dragon(cJinete *jinetin);
+	bool verificar_domados();
+	bool verificar_vida_domados();
+
+	int endgame();
 
 	friend ostream& operator<<(ostream& datito, cVikingo& vikinguito);
 	friend ostream& operator<<(ostream& datito, cJinete& jinetito);

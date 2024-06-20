@@ -26,10 +26,11 @@ void dElectro::comer(int comidita) {
 		this->energia++;
 		comidita--;
 	}
-	cout << this->nombre << "ha comido y llenado su tanque de energía. Ahora tiene " << this->energia << "energias de corriente para acabar con sus enemigos" << endl;
+	cout << this->nombre << "ha comido y llenado su tanque de energía. Ahora tiene " << this->energia << " energias de corriente para acabar con sus enemigos" << endl;
 
 }
 
 void dElectro::entrenar(int numero) {
 	this->maxEnergia = this->maxEnergia + numero;
+	this->nivel = this->nivel + 1;
 }

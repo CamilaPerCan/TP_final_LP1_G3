@@ -12,6 +12,16 @@ void iComedor::subir_nivel()
 	cout << "Ahora se necesitan " << this->precio << " para aumentar la capacidad del comedor." << endl;
 }
 
+void iComedor::bajar_nivel()
+{
+	this->nivel--;
+	cout << "Te han bajado el nivel del comedor! Ahora esta en el nivel " << this->nivel << endl;
+	this->capacidad = this->capacidad - 5;
+	cout << "Ha bajado la capacidad de entregar energia del comedor. Ahora la capacidad es " << this->capacidad << endl;
+	this->precio = this->precio - 15;
+	cout << "Ahora se necesitan " << this->precio << " para aumentar la capacidad del comedor." << endl;
+}
+
 void iComedor::aumentar(cJinete* jinete) {
 	jinete->get_Dragon()->comer(this->capacidad);
 }

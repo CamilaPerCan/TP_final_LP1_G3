@@ -33,4 +33,5 @@ void dFuego::comer(int comidita) {
 
 void dFuego::entrenar(int numero) {
 	this->maxFueguitos = this->maxFueguitos + numero;
+	this->nivel = this->nivel + 1;
 }

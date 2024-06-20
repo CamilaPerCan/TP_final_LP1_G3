@@ -27,11 +27,11 @@ int main()
     list<cVikingo*> vikingitos;
     list<cEdificio*> aldea;
 
-    cDragon* dragoncito1 = new dElectro(24, 4, 5, "a", " carac", MINI, 0, 100);
-    cDragon* dragoncito2 = new dVeneno(24, 4, 5, "b", " carac", MINI, 0, 100);
-    cDragon* dragoncito3 = new dFuego(24, 4, 5, "c", " carac", MINI, 0, 100);
-    cDragon* dragoncito4 = new dFuego(24, 4, 5, "d", " carac", MINI, 0, 100);
-    cDragon* dragoncito5 = new dElectro(24, 4, 5, "e", " carac", MINI, 0, 100);
+    cDragon* dragoncito1 = new dElectro(24, 4, 5, "Chimuelo", " carac", MINI, 0, 100);
+    cDragon* dragoncito2 = new dVeneno(24, 4, 5, "El sapo Pepe", " carac", MINI, 0, 100);
+    cDragon* dragoncito3 = new dFuego(24, 4, 5, "Albondiga", " carac", MINI, 0, 100);
+    cDragon* dragoncito4 = new dFuego(24, 4, 5, "La vaca Lola", " carac", MINI, 0, 100);
+    cDragon* dragoncito5 = new dElectro(24, 4, 5, "Tormenta", " carac", MINI, 0, 100);
 
     dragones.push_back(dragoncito1);
     dragones.push_back(dragoncito2);
@@ -65,29 +65,27 @@ int main()
     vikingitos.push_back(&vikingo5);
     vikingitos.push_back(&vikingo6);
 
-    iComedor comedor("h", 3, 15);
-    iGimnasio gimnasio(3, "h", 5, 15);
-    iHospital hospital("h", 5, 15);
+    cEdificio* comedor=new iComedor("comedor", 3, 15);
+    cEdificio* gimnasio=new iGimnasio(3, "gymnasio", 5, 15);
+    cEdificio* hospital=new iHospital("hospital", 5, 15);
 
-    
-    aldea.push_back(&comedor);
-    aldea.push_back(&gimnasio);
-    aldea.push_back(&hospital);
+    aldea.push_back(comedor);
+    aldea.push_back(gimnasio);
+    aldea.push_back(hospital);
 
     cUsuario YO(dragones, jinetitos, vikingitos, aldea);
 
     auto start_time = chrono::steady_clock::now();
-    YO.combate();
+    //YO.combate();
 
-    /*try {
-        domar_Dragon(&dragones, jinete1);
+    try {
+        YO.domar_Dragon(&jinete1);
         cout << jinete1;
     }
-    catch(const exception *e){
-        cout << e->what();
-        delete e;
-    }*/
-
+    catch (const exception& e) {
+        cout << e.what();
+    }
+    YO.simulacion();
     auto end_time = chrono::steady_clock::now();
     auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     cout << "Tiempo transcurrido: " << duration.count() << " milisegundos" << endl;
@@ -99,6 +97,10 @@ int main()
     delete dragoncito3;
     delete dragoncito4;
     delete dragoncito5;
+
+    delete comedor;
+    delete gimnasio;
+    delete hospital;
 
     return 0;
 }

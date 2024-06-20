@@ -7,6 +7,7 @@ public:
 	
 	void subir_nivel();
 	void aumentar(cJinete* jinete);
+	void bajar_nivel();
 
 	~iComedor() {};
 };
