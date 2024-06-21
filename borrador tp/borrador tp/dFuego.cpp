@@ -7,7 +7,7 @@ dFuego::dFuego(int fuegos, int max, int intensa, string nomb, string carac, etam
 }
 
 void dFuego::atacar(cVikingo* victima) {
-	if (this->fueguitos) {
+	if (this->fueguitos < victima->get_vida()) {
 		cout << RED_BG << ORANGE_TEXT << this->nombre << " ha tirado un bola de fuego!" << victima->get_nombre() << RESET << endl;
 		if (this->intensidad < victima->get_vida()) {
 			victima->set_vida(victima->get_vida() - this->intensidad);

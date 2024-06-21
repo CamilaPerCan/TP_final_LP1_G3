@@ -3,6 +3,7 @@
 #include <string>
 #include <list>
 #include <chrono>
+#include <thread>
 //#include "dVeneno.h"
 #include "iHospital.h"
 #include <exception>
@@ -75,18 +76,12 @@ int main()
 
     cUsuario YO(dragones, jinetitos, vikingitos, aldea);
 
-    //YO.combate();
-
-    try {
-        YO.domar_Dragon(&jinete1);
-        cout << jinete1;
-    }
-    catch (const exception& e) {
-        cout << e.what();
-    }
+    int estado = 0;
     
-    YO.simulacion();
-
+    while (estado == 0) {
+        estado=YO.simulacion();
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+    }
 
     delete dragoncito1;
     delete dragoncito2;

@@ -35,3 +35,8 @@ void iGimnasio::bajar_nivel()
 	this->precio = this->precio - 15;
 	cout << "Ahora se necesitan " << this->precio << " para aumentar esta capacidad del gimnasio." << endl;
 }
+
+void iGimnasio::comprar_clase(int puntos) {
+	this->clases_disp = this->clases_disp + (puntos/5);
+	cout << "Has comprado una clase para tus dragoncitos!" << endl;
+}

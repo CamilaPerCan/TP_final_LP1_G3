@@ -7,6 +7,7 @@ class iGimnasio : public cEdificio
 public:
 	iGimnasio(int dispo, string nombrecin, int capa, int costo);
 
+	void comprar_clase(int puntos);
 	void aumentar(cJinete* jinete);
 	void subir_nivel();
 	void bajar_nivel();

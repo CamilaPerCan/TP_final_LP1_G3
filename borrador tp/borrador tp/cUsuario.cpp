@@ -1,5 +1,6 @@
 //#include "dVeneno.h"
 #include "iHospital.h"
+#include <thread>
 
 cUsuario::cUsuario (list<cDragon*> &dragoncitos, list<cJinete*>& jinetitos, list<cVikingo*>& vikingitos, list<cEdificio*> &infraestructuras) {
 	
@@ -27,6 +28,7 @@ void cUsuario::domar_Dragon( cJinete * jinetito)
 			(*it)->nivel = rand() % 27 + 1;
 			cant++;
 			(*this) - (*it);
+			cout << jinetito->nombre << " ha domado al dragon ´" <<jinetito->dragoncito->nombre<< "´ de nivel:"<< jinetito->dragoncito->nivel << endl;
 	}
 		it++;
 	}
@@ -34,7 +36,6 @@ void cUsuario::domar_Dragon( cJinete * jinetito)
 		throw exception("No hay dragones no domados :( ");
 	}
 }
-
 
 bool cUsuario::verificar_domados() {
 	if (this->dragones.size() == this->dragones_salvajes.size())
@@ -53,10 +54,10 @@ bool cUsuario::verificar_vida_domados() {
 
 }
 
-void cUsuario::simulacion()
+int cUsuario::simulacion()
 {
 	srand(time(NULL));
-	int accion = rand() % 5 + 1;
+	int accion = rand() % 7 + 1;
 
 	switch (accion)
 	{
@@ -65,12 +66,15 @@ void cUsuario::simulacion()
 		int random = rand() % this->edificios.size();
 		list<cEdificio*>::iterator it = this->edificios.begin();
 		advance(it, random);
-		if (this->puntos <= (*it)->precio)
+		if (this->puntos >= (*it)->precio) {
 			(*it)->subir_nivel();
-		else
+		}
+		else {
 			cout << "no tienes suficientes puntos para subir este edificio de nivel." << endl;
+		}
 		break;
 	}
+
 	case 2: //entrenar dragon (en gimnasio, sube de nivel)
 	{
 		if (this->verificar_domados() && this->verificar_vida_domados()) {
@@ -79,7 +83,6 @@ void cUsuario::simulacion()
 			advance(it2, random1);
 			while ((*it2)->get_Dragon()==NULL) {
 				int random1 = rand() % this->jinetes.size();
-				random1 = 0;
 				it2 = this->jinetes.begin();
 				advance(it2, random1);
 			}
@@ -113,7 +116,6 @@ void cUsuario::simulacion()
 			advance(it3, random1);
 			while ((*it3)->get_Dragon() == NULL) {
 				int random1 = rand() % this->jinetes.size();
-				random1 = 0;
 				it3 = this->jinetes.begin();
 				advance(it3, random1);
 			}
@@ -158,31 +160,83 @@ void cUsuario::simulacion()
 	
 	case 5: //comprar clases
 	{
-
+		if (this->puntos > 5) {
+			iGimnasio* gimnasio = NULL;
+			list<cEdificio*>::iterator it1 = this->edificios.begin();
+			while (gimnasio == NULL) {
+				gimnasio = dynamic_cast<iGimnasio*>(*it1);
+				it1++;
+			}
+			gimnasio->comprar_clase(5);
+			this->puntos = this->puntos - 5;
+			cout << "Ahora tienes "<<this->puntos<< " puntos." << endl;
+		}
+		else 
+			cout << "No tienes sufieciente plata para comprar clases!"<<endl;
+		break;
 	}
 	
 	case 6: //se hace el combate
 	{
 		int cont = 0;
-		int random1 = rand() % 15+1;
+		int random1 = rand() % 20+1;
+		int estado = 0;
 
 		while (cont < random1) {
 			auto start_time = chrono::steady_clock::now();
 			this->combate();
+			std::this_thread::sleep_for(std::chrono::milliseconds(1));
 			auto end_time = chrono::steady_clock::now();
 			auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
-			cout << "Tiempo transcurrido: " << duration.count() << " milisegundos" << endl;
 			cont = cont + duration.count();
+			estado=this->endgame();
+			if (estado == 1) {
+				cout << "HAS PERDIDO EL JUEGO. COMO NO TIENES MÁS DRAGONES O JINETES PARA PROTEGER TU ALDEA, LOS VIKINGOS HAN DESTRUIDO TODO:(" << endl;
+				random1 = 15;
+				return 1;
+			}
+			if (estado == 2) {
+				cout << "HAS GANADO EL JUEGO. HAS DERROTADO A TODOS LOS VIKINGOS:)" << endl;
+				random1 = 15;
+				return 2;
+			}
+
+
 		}
+		break;
+	}
+
+	case 7://domar dragon
+	{
+		int cont = 0;
+		if (this->dragones_domados.size() == this->dragones.size()) {
+			cout << "No hay mas dragones disponibles. Espere a nuevas actualizaciones para encontrar mas niveles y avatares." << endl;
+			break;
+		}
+		while (cont == 0) {
+
+			int random1 = rand() % this->jinetes.size();
+			list<cJinete*>::iterator it2 = this->jinetes.begin();
+			advance(it2, random1);
+			if ((*it2)->get_Dragon() == NULL || (*it2)->get_Dragon()->get_vida() == 0) {
+				try {
+					this->domar_Dragon(*it2);
+				}
+				catch (const exception& e) {
+					cout << e.what();
+				}
+				cont++;
+			}
+		
+		}
+		break;
 	}
 
 	default:
 		break;
-		
 	}
+	return 0;
 }
-
-
 
 void cUsuario::atraco()
 {
@@ -196,12 +250,17 @@ void cUsuario::atraco()
 			<< "Le quedan " << this->puntos << " puntos." << endl;
 	}
 	else {
-		int atraco = rand() % this->edificios.size() ;
-		list<cEdificio*>::iterator it = this->edificios.begin();
-		for (int i = 0; i < atraco; i++) {
-			it++;
+		int cont = 0;
+		while (cont == 0) {
+			int atraco = rand() % this->edificios.size();
+			list<cEdificio*>::iterator it = this->edificios.begin();
+			for (int i = 0; i < atraco; i++) {
+				it++;
+			}
+			if ((*it)->nivel>0 && (*it)->capacidad>0) {
+				(*it)->bajar_nivel();
+			}
 		}
-		(*it)->bajar_nivel();
 	}
 }
 
@@ -235,7 +294,7 @@ void cUsuario::combate() {
 					if ((*it)->vida > 0) {
 						int random1 = rand() % this->jinetes.size();
 						list<cJinete*>::iterator it2 = this->jinetes.begin();
-						advance(it2, random1);
+						it2 = this->jinetes.begin();
 						try {
 							(*it)->atacarDragon(*it2);
 						}
@@ -266,8 +325,8 @@ void cUsuario::combate() {
 							if ((*it2)->vida > 0) {
 								(*it)->atacar((*it2));
 								cont++;
-								it2++;
 							}//ataco a un vikingo que tenga vida>0
+							it2++;
 						}
 						i++;
 					}
@@ -280,7 +339,6 @@ void cUsuario::combate() {
 				}
 
 			}
-			this->endgame();
 		}
 	}
 }

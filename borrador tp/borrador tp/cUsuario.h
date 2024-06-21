@@ -24,7 +24,7 @@ public:
 	cUsuario(list<cDragon*> &dragoncitos, list<cJinete*> &jinetitos, list<cVikingo*> &vikingitos, list<cEdificio*> &infraestructuras);
 
 	void combate();
-	void simulacion();
+	int simulacion();
 	void atraco();
 
 	int get_puntos() { return puntos; };

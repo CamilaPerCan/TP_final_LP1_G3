@@ -14,6 +14,8 @@ void cVikingo::atacarDragon(cJinete* victima) {//si el jinete no tiene dragon vi
 
 	if (this->danio < victima->get_Dragon()->get_vida()) {
 		victima->get_Dragon()->set_vida(victima->get_Dragon()->get_vida() - this->danio);
+		cout << "El vikingo "<<this->nombre<<" ha atacado a "<< victima->get_Dragon()->get_nombre() << endl;
+		cout << "Ahora tiene " << victima->get_Dragon()->get_vida() << "de vida"<<endl;
 	}
 	else {
 		victima->get_Dragon()->set_vida(0);

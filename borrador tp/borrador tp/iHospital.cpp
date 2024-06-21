@@ -8,6 +8,7 @@ void iHospital::aumentar(cJinete* jinete) {
 		jinete->set_vida(1);
 		algo--;
 	}
+	cout << jinete->get_nombre() << "estuvo en el hospital. Ahora tiene " << jinete->get_vida() << " de vida." << endl;
 }
 
 void iHospital::subir_nivel()
