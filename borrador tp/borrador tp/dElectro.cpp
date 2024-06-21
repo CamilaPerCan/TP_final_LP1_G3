@@ -8,7 +8,7 @@ dElectro::dElectro(int corriente1, int energia1, int max, string nomb, string ca
 void dElectro::atacar(cVikingo* victima) {
 	if (this->energia)
 	{
-		cout <<BLUE_BG << this->nombre << " está electrocutando a " << victima->get_nombre() << RESET <<endl;
+		cout <<BLUE_BG << this->nombre << " esta electrocutando a " << victima->get_nombre() << RESET <<endl;
 		if (this->corriente < victima->get_vida()) {
 			victima->set_vida(victima->get_vida() - this->corriente);
 		}

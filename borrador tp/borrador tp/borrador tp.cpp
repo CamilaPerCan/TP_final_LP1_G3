@@ -75,7 +75,6 @@ int main()
 
     cUsuario YO(dragones, jinetitos, vikingitos, aldea);
 
-    auto start_time = chrono::steady_clock::now();
     //YO.combate();
 
     try {
@@ -85,12 +84,9 @@ int main()
     catch (const exception& e) {
         cout << e.what();
     }
+    
     YO.simulacion();
-    auto end_time = chrono::steady_clock::now();
-    auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
-    cout << "Tiempo transcurrido: " << duration.count() << " milisegundos" << endl;
 
-    YO.atraco();
 
     delete dragoncito1;
     delete dragoncito2;

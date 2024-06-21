@@ -2,10 +2,12 @@
 
 int cVikingo::cant = 0;
 
-void cVikingo::atacarDragon(cJinete* victima) {
+void cVikingo::atacarDragon(cJinete* victima) {//si el jinete no tiene dragon vivo o domado, se ataca al jinete
 
-	if(victima->get_Dragon() == NULL)
-		throw new exception("Este jinete no tiene dragon domado");
+	if (victima->get_Dragon() == NULL) {
+		this->atacarJinete(victima);
+		throw exception("Este jinete no tiene dragon domado");
+	}
 
 	if (victima->get_Dragon()->get_vida() == 0)
 		atacarJinete(victima);
