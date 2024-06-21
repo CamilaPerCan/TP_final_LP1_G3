@@ -8,16 +8,16 @@ dFuego::dFuego(int fuegos, int max, int intensa, string nomb, string carac, etam
 
 void dFuego::atacar(cVikingo* victima) {
 	if (this->fueguitos < victima->get_vida()) {
-		cout << RED_BG << ORANGE_TEXT << this->nombre << " ha tirado un bola de fuego!" << victima->get_nombre() << RESET << endl;
+		cout << RED_BG << ORANGE_TEXT << this->nombre << " ha tirado un bola de fuego!" << victima->get_nombre()  <<"Ahora tiene " << victima->get_vida() << " de vida." << RESET << endl;
 		if (this->intensidad < victima->get_vida()) {
 			victima->set_vida(victima->get_vida() - this->intensidad);
 		}
 		else {
 			victima->set_vida(0);
 			cout << victima->get_nombre() << " ha muerto:(." << endl;
+			cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << RED_TEXT << "FUERZA BARBIE, GUERRERA." << RESET << endl;
 		}
 		this->fueguitos = this->fueguitos - 1;
-		cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << RED_TEXT << "FUERZA BARBIE, GUERRERA." << RESET << endl;
 	}
 	else cout << "Oh no, " << this->nombre << " no tiene suficientes bolas de fuego." << endl;
 }

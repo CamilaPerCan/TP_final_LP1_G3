@@ -6,7 +6,7 @@ dVeneno::dVeneno(int toxica, int litritos, int max, string nomb, string carac, e
 }
 
 void dVeneno::atacar(cVikingo* victima) {//bajar y poner un if
-	cout <<GREEN_BG<<BLACK_TEXT<< this->nombre << "está envenenando a " << victima->get_nombre() << RESET<< endl;
+	cout <<GREEN_BG<<BLACK_TEXT<< this->nombre << "está envenenando a " << victima->get_nombre() << "Ahora tiene " << victima->get_vida() << " de vida." << RESET << endl;
 	if (this->toxicidad < victima->get_vida()) {
 		victima->set_vida(victima->get_vida() - this->toxicidad);
 	}
