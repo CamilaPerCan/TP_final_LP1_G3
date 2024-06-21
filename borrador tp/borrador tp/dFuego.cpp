@@ -6,20 +6,25 @@ dFuego::dFuego(int fuegos, int max, int intensa, string nomb, string carac, etam
 	this->intensidad = intensa;
 }
 
-void dFuego::atacar(cVikingo* victima) {
+int dFuego::atacar(cVikingo* victima) {
+	int puntosGanados = 0;
 	if (this->fueguitos < victima->get_vida()) {
-		cout << RED_BG << ORANGE_TEXT << this->nombre << " ha tirado un bola de fuego!" << victima->get_nombre()  <<"Ahora tiene " << victima->get_vida() << " de vida." << RESET << endl;
 		if (this->intensidad < victima->get_vida()) {
 			victima->set_vida(victima->get_vida() - this->intensidad);
+			cout << RED_BG << ORANGE_TEXT << this->nombre << " le ha tirado un bola de fuego a " << victima->get_nombre() << "! Ahora tiene " << victima->get_vida() << " de vida." << RESET << endl;
+			puntosGanados = 20;
 		}
 		else {
 			victima->set_vida(0);
-			cout << victima->get_nombre() << " ha muerto:(." << endl;
-			cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << RED_TEXT << "FUERZA BARBIE, GUERRERA." << RESET << endl;
+			cout << RED_BG << ORANGE_TEXT << this->nombre << " ha tirado un bola de fuego!" << endl;
+			cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << RED_TEXT << " FUERZA BARBIE, GUERRERA." << RESET << endl;
+			puntosGanados = 50;
 		}
 		this->fueguitos = this->fueguitos - 1;
+		cout << "A " << this->nombre << " Le quedan " << this->fueguitos << " fueguitos." << endl;
 	}
 	else cout << "Oh no, " << this->nombre << " no tiene suficientes bolas de fuego." << endl;
+	return puntosGanados;
 }
 
 void dFuego::comer(int comidita) {
@@ -27,7 +32,7 @@ void dFuego::comer(int comidita) {
 		this->fueguitos++;
 		comidita--;
 	}
-	cout << this->nombre << "ha comido y llenado su tanque de energía. Ahora tiene " << this->fueguitos << "bolas de fuego para acabar con sus enemigos" << endl;
+	cout << this->nombre << " ha comido y llenado su tanque de energia. Ahora tiene " << this->fueguitos << " bolas de fuego para acabar con sus enemigos" << endl;
 
 }
 

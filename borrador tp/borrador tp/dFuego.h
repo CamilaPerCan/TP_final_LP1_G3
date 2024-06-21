@@ -24,7 +24,7 @@ class dFuego :public cDragon
 public:
 	dFuego(int fuegos, int max, int intensa, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida);
 
-	void atacar(cVikingo* victima);
+	int atacar(cVikingo* victima);
 	void comer(int comidita);
 	void entrenar(int numero);
 

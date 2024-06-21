@@ -5,20 +5,26 @@ dElectro::dElectro(int corriente1, int energia1, int max, string nomb, string ca
 	this->maxEnergia = max;
 }
 
-void dElectro::atacar(cVikingo* victima) {
+int dElectro::atacar(cVikingo* victima) {
+	int puntosGanados = 0;
 	if (this->energia < victima->get_vida())
 	{
-		cout <<BLUE_BG << this->nombre << " esta electrocutando a " << victima->get_nombre()<< "Ahora tiene "<<victima->get_vida()<<" de vida." << RESET << endl;
 		if (this->corriente < victima->get_vida()) {
 			victima->set_vida(victima->get_vida() - this->corriente);
+			cout << BLUE_BG << this->nombre << " esta electrocutando a " << victima->get_nombre() << "! Ahora tiene " << victima->get_vida() << " de vida." << RESET << endl;
+			puntosGanados = 20;
 		}
 		else {
 			victima->set_vida(0);
-			cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << RED_TEXT<< "FUERZA BARBIE, GUERRERA." << RESET << endl;
+			cout << BLUE_BG << this->nombre << " esta electrocutando a " << victima->get_nombre() << endl;
+			cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << RED_TEXT<< " FUERZA BARBIE, GUERRERA." << RESET << endl;
+			puntosGanados = 50;
 		}
 		this->energia = this->energia - 1;
+		cout << "A " << this->nombre << " Le quedan " << this->energia << " descargas." << endl;
 	}
 	else cout << "Oh no, " << this->nombre << " no tiene suficientes descargas." << endl;
+	return puntosGanados;
 }
  
 void dElectro::comer(int comidita) {
@@ -26,7 +32,7 @@ void dElectro::comer(int comidita) {
 		this->energia++;
 		comidita--;
 	}
-	cout << this->nombre << "ha comido y llenado su tanque de energía. Ahora tiene " << this->energia << " energias de corriente para acabar con sus enemigos" << endl;
+	cout << this->nombre << " ha comido y llenado su tanque de energia. Ahora tiene " << this->energia << " energias de corriente para acabar con sus enemigos" << endl;
 
 }
 

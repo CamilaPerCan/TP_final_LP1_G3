@@ -3,22 +3,22 @@
 iHospital::iHospital(string nombrecin, int capa, int costo) : cEdificio(nombrecin, capa, costo) {};
 
 void iHospital::aumentar(cJinete* jinete) {
-	int algo = 100 - jinete->get_vida();
+	/*int algo = 100 - jinete->get_vida();
 	while (algo>0 && jinete->get_vida() < 100) {
-		jinete->set_vida(1);
+		jinete->get_vida(1);
 		algo--;
-	}
-	cout << jinete->get_nombre() << "estuvo en el hospital. Ahora tiene " << jinete->get_vida() << " de vida." << endl;
+	}*/
+	jinete->set_vida(100);
+	cout << jinete->get_nombre() << " estuvo en el hospital. Ahora tiene " << jinete->get_vida() << " de vida." << endl;
 }
 
 void iHospital::subir_nivel()
 {
 	this->nivel++;
-	cout << "Has subido el nivel del hospital! Ahora esta en el nivel " << this->nivel << endl;
 	this->capacidad = this->capacidad + 5;
-	cout << "Has aumentado la capacidad de regenerar vida del hospital! Ahora la capacidad es " << this->capacidad << endl;
 	this->precio = this->precio + 15;
-	cout << "Ahora se necesitan " << this->precio << " para aumentar esta capacidad del hospital." << endl;
+	cout << "Has subido el nivel del hospital! Ahora esta en el nivel " << this->nivel << " Has aumentado la capacidad de regenerar vida del hospital! Ahora es " 
+		<< this->capacidad << " Ahora se necesitan " << this->precio << " para aumentar esta capacidad." << endl;
 }
 
 void iHospital::bajar_nivel()

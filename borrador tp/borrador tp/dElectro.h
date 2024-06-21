@@ -22,7 +22,7 @@ class dElectro : public cDragon
 public:
 	dElectro(int corriente1, int energia1, int max, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida);
 	
-	void atacar(cVikingo* victima);
+	int atacar(cVikingo* victima);
 	void comer(int comidita);
 	void entrenar(int numero);
 	

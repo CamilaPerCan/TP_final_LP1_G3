@@ -25,7 +25,7 @@ public:
 	dVeneno(int toxica, int litritos, int max, string nomb, string carac, etamanio tam, bool nuevoEstado, int nuevaVida);
 	
 	void comer(int comidita);
-	void atacar(cVikingo* victima);
+	int atacar(cVikingo* victima);
 	void entrenar(int numero);
 
 	~dVeneno() {};

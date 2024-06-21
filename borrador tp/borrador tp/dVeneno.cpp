@@ -5,15 +5,22 @@ dVeneno::dVeneno(int toxica, int litritos, int max, string nomb, string carac, e
 	this->max_litros = max;
 }
 
-void dVeneno::atacar(cVikingo* victima) {//bajar y poner un if
-	cout <<GREEN_BG<<BLACK_TEXT<< this->nombre << "está envenenando a " << victima->get_nombre() << "Ahora tiene " << victima->get_vida() << " de vida." << RESET << endl;
+int dVeneno::atacar(cVikingo* victima) {//bajar y poner un if
+	int puntosGanados = 0;
 	if (this->toxicidad < victima->get_vida()) {
 		victima->set_vida(victima->get_vida() - this->toxicidad);
+		cout << GREEN_BG << BLACK_TEXT << this->nombre << " esta envenenando a " << victima->get_nombre() << "! Ahora tiene " << victima->get_vida() << " de vida." << RESET << endl;
+		puntosGanados = 20;
 	}
 	else {
 		victima->set_vida(0);
-		cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << RED_TEXT << "FUERZA BARBIE, GUERRERA." << RESET<<endl;
+		cout << GREEN_BG << BLACK_TEXT << this->nombre << " esta envenenando a " << victima->get_nombre() << endl;
+		cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << RED_TEXT << " FUERZA BARBIE, GUERRERA." << RESET<<endl;
+		puntosGanados = 50;
 	}
+	this->litros = this->litros - 1;
+	cout << "A " << this->nombre << " Le quedan " << this->litros << " litros de veneno." << endl;
+	return puntosGanados;
 }
 
 void dVeneno::comer(int comidita) {
@@ -21,7 +28,7 @@ void dVeneno::comer(int comidita) {
 		this->litros++;
 		comidita--;
 	}
-	cout << this->nombre << "ha comido y llenado su tanque de energía. Ahora tiene " << this->litros << "litros de veneno para acabar con sus enemigos" << endl;
+	cout << this->nombre << " ha comido y llenado su tanque de energia. Ahora tiene " << this->litros << " litros de veneno para acabar con sus enemigos." << endl;
 
 }
 

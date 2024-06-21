@@ -67,10 +67,12 @@ int cUsuario::simulacion()
 		list<cEdificio*>::iterator it = this->edificios.begin();
 		advance(it, random);
 		if (this->puntos >= (*it)->precio) {
+			this->puntos = this->puntos - (*it)->precio;
 			(*it)->subir_nivel();
+			cout << GREEN_TEXT << "Ahora tienes " << this->puntos << " puntos." << RESET << endl;
 		}
 		else {
-			cout << "no tienes suficientes puntos para subir este edificio de nivel." << endl;
+			cout << "No tienes suficientes puntos para subir este edificio de nivel." << endl;
 		}
 		break;
 	}
@@ -169,7 +171,7 @@ int cUsuario::simulacion()
 			}
 			gimnasio->comprar_clase(5);
 			this->puntos = this->puntos - 5;
-			cout << "Ahora tienes "<<this->puntos<< " puntos." << endl;
+			cout << GREEN_TEXT << "Tienes "<<this->puntos<< " puntos." << RESET << endl;
 		}
 		else 
 			cout << "No tienes sufieciente plata para comprar clases!"<<endl;
@@ -179,7 +181,7 @@ int cUsuario::simulacion()
 	case 6: //se hace el combate
 	{
 		int cont = 0;
-		int random1 = rand() % 20+1;
+		int random1 = rand() % 35+1;
 		int estado = 0;
 
 		while (cont < random1) {
@@ -247,7 +249,7 @@ void cUsuario::atraco()
 	if (robados <= puntos) {
 		this->puntos = this->puntos - robados;
 		cout << "Oh no, un grupo de vikingos ataco la aldea cuando estaba desprotegida y se robaron " << robados << " puntos." << endl
-			<< "Le quedan " << this->puntos << " puntos." << endl;
+			<< "Te quedan " << this->puntos << " puntos." << endl;
 	}
 	else {
 		int cont = 0;
@@ -323,7 +325,10 @@ void cUsuario::combate() {
 						list<cVikingo*>::iterator it2 = this->vikingos.begin();
 						while (cont == 0) {
 							if ((*it2)->vida > 0) {
-								(*it)->atacar((*it2));
+								int puntos = (*it)->atacar((*it2));
+								this->puntos = this->puntos + puntos;
+								if(puntos!=0)
+									cout << GREEN_TEXT << "Ahora tienes " << this->puntos << " puntos. " << RESET << endl;
 								cont++;
 							}//ataco a un vikingo que tenga vida>0
 							it2++;

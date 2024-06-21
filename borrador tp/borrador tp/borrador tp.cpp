@@ -17,6 +17,8 @@
 #define GREEN_BG    "\033[42m"
 #define BLUE_BG     "\033[44m"
 #define ORANGE_TEXT "\033[33m"
+// "\033[35m" texto violeta
+// "\033[36m" texto celeste
 
 using namespace std;
 class cJinete;
@@ -40,18 +42,18 @@ int main()
     dragones.push_back(dragoncito4);
     dragones.push_back(dragoncito5);
 
-    cVikingo vikingo1(12, 100, "chef", "remy");
-    cVikingo vikingo2(14, 100, "souchef", "colette");
-    cVikingo vikingo3(8, 100, "cajero", "emile");
-    cVikingo vikingo4(10, 100, "mesero", "skinner");
-    cVikingo vikingo5(30, 100, "jefe", "linguini");
-    cVikingo vikingo6(11, 100, "inspector de sanidad", "inspector de sanidad");
+    cVikingo vikingo1(15, 100, "chef", "Remy");
+    cVikingo vikingo2(14, 100, "souchef", "Colette");
+    cVikingo vikingo3(18, 100, "cajero", "Emile");
+    cVikingo vikingo4(20, 100, "mesero", "Skinner");
+    cVikingo vikingo5(30, 100, "jefe", "Linguini");
+    cVikingo vikingo6(11, 100, "inspector de sanidad", "Inspector de sanidad");
 
-    cJinete jinete1("lindo", 100, "corredor", "mcqueen");
-    cJinete jinete2("alto", 100, "grua", "mate");
-    cJinete jinete3("bajo", 100, "excorredor", "doc hudson");
-    cJinete jinete4("pelirrojo", 100, "camionero", "mack");
-    cJinete jinete5("guapeton", 100, "mecanico", "guido");
+    cJinete jinete1("lindo", 100, "corredor", "McQueen");
+    cJinete jinete2("alto", 100, "grua", "Mate");
+    cJinete jinete3("bajo", 100, "excorredor", "Doc Hudson");
+    cJinete jinete4("pelirrojo", 100, "camionero", "Mack");
+    cJinete jinete5("guapeton", 100, "mecanico", "Guido");
 
     jinetitos.push_back(&jinete1);
     jinetitos.push_back(&jinete2);

@@ -46,7 +46,7 @@ public:
 	{ nivel = nivelcito; };
 	bool baja();
 
-	virtual void atacar(cVikingo* victima) = 0;
+	virtual int atacar(cVikingo* victima) = 0;
 	virtual void comer(int comidita) = 0;
 	virtual void entrenar(int numero) = 0;// sube de nivel al dragon y le da mayor capacidad;
 
