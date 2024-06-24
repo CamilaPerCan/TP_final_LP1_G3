@@ -16,7 +16,7 @@ int dElectro::atacar(cVikingo* victima) {
 		}
 		else {
 			victima->set_vida(0);
-			cout << BLUE_BG << this->nombre << " esta electrocutando a " << victima->get_nombre() << endl;
+			cout << BLUE_BG << this->nombre << " esta electrocutando a " << victima->get_nombre() << RESET <<endl;
 			cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << RED_TEXT<< " FUERZA BARBIE, GUERRERA." << RESET << endl;
 			puntosGanados = 50;
 		}

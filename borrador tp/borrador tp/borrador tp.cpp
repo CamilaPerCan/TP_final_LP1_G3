@@ -79,7 +79,7 @@ int main()
     cUsuario YO(dragones, jinetitos, vikingitos, aldea);
 
     int estado = 0;
-    
+
     while (estado == 0) {
         estado=YO.simulacion();
         std::this_thread::sleep_for(std::chrono::seconds(1));

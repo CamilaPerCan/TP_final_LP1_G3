@@ -19,6 +19,13 @@ void cUsuario::domar_Dragon( cJinete * jinetito)
 	list<cDragon*>::iterator it = this->dragones.begin();
 
 	srand(time(NULL));
+	if (jinetito->dragoncito !=NULL) {
+		throw exception("Este jinete ya tiene dragon.");
+	}
+
+	if (this->dragones_domados.size() == this->dragones.size()) {
+		throw exception("No hay dragones no domados :( ");
+	}
 
 	int cant = 0;
 	while (cant == 0 && it != dragones.end()) {
@@ -32,9 +39,7 @@ void cUsuario::domar_Dragon( cJinete * jinetito)
 	}
 		it++;
 	}
-	if (cant == 0) {
-		throw exception("No hay dragones no domados :( ");
-	}
+	
 }
 
 bool cUsuario::verificar_domados() {
@@ -80,21 +85,23 @@ int cUsuario::simulacion()
 	case 2: //entrenar dragon (en gimnasio, sube de nivel)
 	{
 		if (this->verificar_domados() && this->verificar_vida_domados()) {
-			int random1 = rand() % this->jinetes.size();
-			list<cJinete*>::iterator it2 = this->jinetes.begin();
-			advance(it2, random1);
-			while ((*it2)->get_Dragon()==NULL) {
 				int random1 = rand() % this->jinetes.size();
-				it2 = this->jinetes.begin();
+				list<cJinete*>::iterator it2 = this->jinetes.begin();
 				advance(it2, random1);
-			}
-			iGimnasio* gimnasio = NULL;
-			list<cEdificio*>::iterator it1 = this->edificios.begin();
-			while (gimnasio == NULL) {
-				gimnasio = dynamic_cast<iGimnasio*>(*it1);
-				it1++;
-			}
+				while ((*it2)->get_Dragon() == NULL) {
+					int random1 = rand() % this->jinetes.size();
+					it2 = this->jinetes.begin();
+					advance(it2, random1);
+				}
+				if ((*it2)->get_Dragon()->get_vida() != 0) {
+				iGimnasio* gimnasio = NULL;
+				list<cEdificio*>::iterator it1 = this->edificios.begin();
+				while (gimnasio == NULL) {
+					gimnasio = dynamic_cast<iGimnasio*>(*it1);
+					it1++;
+				}
 				gimnasio->aumentar(*it2);
+				}
 		}
 		else {
 			int random1 = rand() % this->jinetes.size();
@@ -121,13 +128,15 @@ int cUsuario::simulacion()
 				it3 = this->jinetes.begin();
 				advance(it3, random1);
 			}
-			iComedor* comedor = NULL;
-			list<cEdificio*>::iterator it4 = this->edificios.begin();
-			while (comedor == NULL) {
-				comedor = dynamic_cast<iComedor*>(*it4);
-				it4++;
+			if ((*it3)->get_Dragon()->get_vida() != 0) {
+				iComedor* comedor = NULL;
+				list<cEdificio*>::iterator it4 = this->edificios.begin();
+				while (comedor == NULL) {
+					comedor = dynamic_cast<iComedor*>(*it4);
+					it4++;
+				}
+				comedor->aumentar(*it3);
 			}
-			comedor->aumentar(*it3);
 		}
 		else {
 			int random1 = rand() % this->jinetes.size();
@@ -145,7 +154,7 @@ int cUsuario::simulacion()
 	
 	case 4:	//subir vida jinete (en hospital, se cura jinete)
 	{
-		int random1 = rand() % this->jinetes.size();
+		/*int random1 = rand() % this->jinetes.size();
 		list<cJinete*>::iterator it5 = this->jinetes.begin();
 		advance(it5, random1);
 		if ((*it5)->get_vida()!=100) {
@@ -156,7 +165,7 @@ int cUsuario::simulacion()
 				it6++;
 			}
 			hospital->aumentar(*it5);
-		}
+		}*/
 		break;
 	}
 	
@@ -181,7 +190,7 @@ int cUsuario::simulacion()
 	case 6: //se hace el combate
 	{
 		int cont = 0;
-		int random1 = rand() % 35+1;
+		int random1 = rand() % 45+30;
 		int estado = 0;
 
 		while (cont < random1) {
@@ -193,16 +202,17 @@ int cUsuario::simulacion()
 			cont = cont + duration.count();
 			estado=this->endgame();
 			if (estado == 1) {
-				cout << "HAS PERDIDO EL JUEGO. COMO NO TIENES MÁS DRAGONES O JINETES PARA PROTEGER TU ALDEA, LOS VIKINGOS HAN DESTRUIDO TODO:(" << endl;
-				random1 = 15;
+				cout << "HAS PERDIDO EL JUEGO. COMO NO TIENES MÁS DRAGONES O JINETES PARA PROTEGER TU ALDEA, LOS VIKINGOS HAN GANADO:(" << endl;
 				return 1;
 			}
 			if (estado == 2) {
 				cout << "HAS GANADO EL JUEGO. HAS DERROTADO A TODOS LOS VIKINGOS:)" << endl;
-				random1 = 15;
 				return 2;
 			}
-
+			if (estado == 3) {
+				cout << "HAS PERDIDO EL JUEGO. COMO NO TIENES MÁS DRAGONES O JINETES PARA PROTEGER TU ALDEA, LOS VIKINGOS HAN DESTRUIDO TODO:(" << endl;
+				return 3;
+			}
 
 		}
 		break;
@@ -215,21 +225,23 @@ int cUsuario::simulacion()
 			cout << "No hay mas dragones disponibles. Espere a nuevas actualizaciones para encontrar mas niveles y avatares." << endl;
 			break;
 		}
-		while (cont == 0) {
+		else {
+			while (cont == 0) {
 
-			int random1 = rand() % this->jinetes.size();
-			list<cJinete*>::iterator it2 = this->jinetes.begin();
-			advance(it2, random1);
-			if ((*it2)->get_Dragon() == NULL || (*it2)->get_Dragon()->get_vida() == 0) {
-				try {
-					this->domar_Dragon(*it2);
+				int random1 = rand() % this->jinetes.size();
+				list<cJinete*>::iterator it2 = this->jinetes.begin();
+				advance(it2, random1);
+				if ((*it2)->get_Dragon() == NULL || (*it2)->get_Dragon()->get_vida() == 0) {
+					try {
+						this->domar_Dragon(*it2);
+					}
+					catch (const exception& e) {
+						cout << e.what();
+					}
+					cont++;
 				}
-				catch (const exception& e) {
-					cout << e.what();
-				}
-				cont++;
+
 			}
-		
 		}
 		break;
 	}
@@ -244,7 +256,7 @@ void cUsuario::atraco()
 {
 	srand(time(NULL));
 
-	int robados = rand() % 100 + 1;
+	int robados = rand() % 75 + 1;
 
 	if (robados <= puntos) {
 		this->puntos = this->puntos - robados;
@@ -253,14 +265,14 @@ void cUsuario::atraco()
 	}
 	else {
 		int cont = 0;
-		while (cont == 0) {
-			int atraco = rand() % this->edificios.size();
-			list<cEdificio*>::iterator it = this->edificios.begin();
-			for (int i = 0; i < atraco; i++) {
-				it++;
-			}
+		list<cEdificio*>::iterator it = this->edificios.begin();
+		while (cont == 0&& it!=this->edificios.end()) {
 			if ((*it)->nivel>0 && (*it)->capacidad>0) {
 				(*it)->bajar_nivel();
+				cont++;
+			}
+			else {
+				it++;
 			}
 		}
 	}
@@ -280,10 +292,9 @@ void cUsuario::combate() {
 			vidas = vidas + (*it3)->vida;
 		}
 		//como no tengo dragones domados que tengan vida, no me protegen, también me atracan
-		if (this->dragones_domados.size() < this->dragones.size() && vidas == 0) {
+		/*if (vidas == 0) {
 			this->atraco();
-		}
-		else {
+		}*/
 
 
 			int random1 = rand() % 100 + 1;
@@ -296,7 +307,7 @@ void cUsuario::combate() {
 					if ((*it)->vida > 0) {
 						int random1 = rand() % this->jinetes.size();
 						list<cJinete*>::iterator it2 = this->jinetes.begin();
-						it2 = this->jinetes.begin();
+						advance(it2, random1);
 						try {
 							(*it)->atacarDragon(*it2);
 						}
@@ -318,7 +329,7 @@ void cUsuario::combate() {
 				advance(it, random1);
 				//elijo un dragon random
 				int i = 0;
-				while (i == 0) //busco dragón que tenga vida>0
+				while (i == 0 && this->verificar_vida_domados()) //busco dragón que tenga vida>0
 				{
 					if ((*it)->vida > 0) {
 						int cont = 0;
@@ -344,7 +355,7 @@ void cUsuario::combate() {
 				}
 
 			}
-		}
+		
 	}
 }
 
@@ -372,6 +383,15 @@ int cUsuario::endgame() {
 	}
 	if (vidaJ == this->jinetes.size() && vidaD == 0)
 		return 1; //perdiste el juego
+
+	int puntos = 0;
+	list<cEdificio*>::iterator it3 = this->edificios.begin();
+	for (int k = 0; k < this->edificios.size(); k++) {
+		puntos = puntos + (*it3)->nivel;
+		it3++;
+	}
+	if (puntos == 0)
+		return 3; //perdiste el juego
 
 	return 0; //seguir jugando
 }
