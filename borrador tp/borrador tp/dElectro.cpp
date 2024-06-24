@@ -32,7 +32,7 @@ void dElectro::comer(int comidita) {
 		this->energia++;
 		comidita--;
 	}
-	cout << this->nombre << " ha comido y llenado su tanque de energia. Ahora tiene " << this->energia << " energias de corriente para acabar con sus enemigos" << endl;
+	cout << "\033[35m" << this->nombre << " ha comido y llenado su tanque de energia. Ahora tiene " << this->energia << " energias de corriente para acabar con sus enemigos" << RESET << endl;
 
 }
 

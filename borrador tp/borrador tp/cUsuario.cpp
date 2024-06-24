@@ -35,7 +35,7 @@ void cUsuario::domar_Dragon( cJinete * jinetito)
 			(*it)->nivel = rand() % 27 + 1;
 			cant++;
 			(*this) - (*it);
-			cout << "\033[36m" << jinetito->nombre << " ha domado al dragon ´" <<jinetito->dragoncito->nombre<< "´ de nivel:"<< jinetito->dragoncito->nivel << RESET << endl;
+			cout << "\033[36m" << jinetito->nombre << " ha domado al dragon " <<jinetito->dragoncito->nombre<< " de nivel:"<< jinetito->dragoncito->nivel << RESET << endl;
 			cout << "\033[36m" << *jinetito << RESET << endl;
 	}
 		it++;

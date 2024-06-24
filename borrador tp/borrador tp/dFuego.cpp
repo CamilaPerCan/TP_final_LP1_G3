@@ -32,7 +32,7 @@ void dFuego::comer(int comidita) {
 		this->fueguitos++;
 		comidita--;
 	}
-	cout << this->nombre << " ha comido y llenado su tanque de energia. Ahora tiene " << this->fueguitos << " bolas de fuego para acabar con sus enemigos" << endl;
+	cout << "\033[35m" << this->nombre << " ha comido y llenado su tanque de energia. Ahora tiene " << this->fueguitos << " bolas de fuego para acabar con sus enemigos"  << RESET << endl;
 
 }
 
