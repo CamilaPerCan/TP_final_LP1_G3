@@ -28,10 +28,10 @@ void cVikingo::atacarDragon(cJinete* victima) {//si el jinete no tiene dragon vi
 void cVikingo::atacarJinete(cJinete* victima) {
 	if (this->danio < victima->get_vida()) {
 		victima->set_vida(victima->get_vida() - this->danio);
-		cout << "El vikingo " << this->nombre << " esta atacando al jinete " << victima->get_nombre() << endl;
+		cout << "\033[33m" << "El vikingo " << this->nombre << " esta atacando al jinete " << victima->get_nombre() << RESET << endl;
 	}
 	else {
 		victima->set_vida(1);
-		cout << victima->get_nombre() << " tiene 1 de vida, se ha ido al hospital en ambulancia. IUIUIUIUIU" << endl;
+		cout <<"\033[36m" << victima->get_nombre() << " tiene 1 de vida, se ha ido al hospital en ambulancia. IUIUIUIUIU" << RESET << endl;
 	}
 }

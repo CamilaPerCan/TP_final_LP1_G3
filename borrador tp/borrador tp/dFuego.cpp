@@ -16,7 +16,7 @@ int dFuego::atacar(cVikingo* victima) {
 		}
 		else {
 			victima->set_vida(0);
-			cout << RED_BG << ORANGE_TEXT << this->nombre << " ha tirado un bola de fuego!" << endl;
+			cout << RED_BG << ORANGE_TEXT << this->nombre << " ha tirado un bola de fuego!" << RESET << endl;
 			cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << RED_TEXT << " FUERZA BARBIE, GUERRERA." << RESET << endl;
 			puntosGanados = 50;
 		}

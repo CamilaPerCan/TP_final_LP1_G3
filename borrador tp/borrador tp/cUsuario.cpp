@@ -35,7 +35,8 @@ void cUsuario::domar_Dragon( cJinete * jinetito)
 			(*it)->nivel = rand() % 27 + 1;
 			cant++;
 			(*this) - (*it);
-			cout << jinetito->nombre << " ha domado al dragon ´" <<jinetito->dragoncito->nombre<< "´ de nivel:"<< jinetito->dragoncito->nivel << endl;
+			cout << "\033[36m" << jinetito->nombre << " ha domado al dragon ´" <<jinetito->dragoncito->nombre<< "´ de nivel:"<< jinetito->dragoncito->nivel << RESET << endl;
+			cout << "\033[36m" << *jinetito << RESET << endl;
 	}
 		it++;
 	}
@@ -111,7 +112,7 @@ int cUsuario::simulacion()
 				this->domar_Dragon(*it2);
 			}
 			catch (const exception& e) {
-				cout << e.what();
+				cout << e.what() << endl;
 			}
 		}
 		break;
@@ -146,7 +147,7 @@ int cUsuario::simulacion()
 				this->domar_Dragon(*it3);
 			}
 			catch (const exception& e) {
-				cout << e.what();
+				cout << e.what() << endl;
 			}
 		}
 		break;
@@ -154,7 +155,7 @@ int cUsuario::simulacion()
 	
 	case 4:	//subir vida jinete (en hospital, se cura jinete)
 	{
-		/*int random1 = rand() % this->jinetes.size();
+		int random1 = rand() % this->jinetes.size();
 		list<cJinete*>::iterator it5 = this->jinetes.begin();
 		advance(it5, random1);
 		if ((*it5)->get_vida()!=100) {
@@ -165,7 +166,7 @@ int cUsuario::simulacion()
 				it6++;
 			}
 			hospital->aumentar(*it5);
-		}*/
+		}
 		break;
 	}
 	
@@ -203,14 +204,29 @@ int cUsuario::simulacion()
 			estado=this->endgame();
 			if (estado == 1) {
 				cout << "HAS PERDIDO EL JUEGO. COMO NO TIENES MÁS DRAGONES O JINETES PARA PROTEGER TU ALDEA, LOS VIKINGOS HAN GANADO:(" << endl;
+				cout << "     _/_/_/    _/_/_/_/  _/_/_/    _/_/_/    _/_/_/    _/_/_/  _/_/_/_/_/  _/_/_/_/   " << endl;
+				cout << "    _/    _/  _/        _/    _/  _/    _/    _/    _/            _/      _/         " << endl;
+				cout << "   _/_/_/    _/_/_/    _/_/_/    _/    _/    _/      _/_/        _/      _/_/_/       " << endl;
+				cout << "  _/        _/        _/    _/  _/    _/    _/          _/      _/      _/           " << endl;
+				cout << " _/        _/_/_/_/  _/    _/  _/_/_/    _/_/_/  _/_/_/        _/      _/_/_/_/       " << endl;
 				return 1;
 			}
 			if (estado == 2) {
 				cout << "HAS GANADO EL JUEGO. HAS DERROTADO A TODOS LOS VIKINGOS:)" << endl;
+				cout << "     _/_/_/    _/_/    _/      _/    _/_/      _/_/_/  _/_/_/_/_/  _/_/_/_/   " << endl;
+				cout << "   _/        _/    _/  _/_/    _/  _/    _/  _/            _/      _/               " << endl;
+				cout << "  _/  _/_/  _/_/_/_/  _/  _/  _/  _/_/_/_/    _/_/        _/      _/_/_/       " << endl;
+				cout << " _/    _/  _/    _/  _/    _/_/  _/    _/        _/      _/      _/           " << endl;
+				cout << "  _/_/_/  _/    _/  _/      _/  _/    _/  _/_/_/        _/      _/_/_/_/       " << endl;
 				return 2;
 			}
 			if (estado == 3) {
 				cout << "HAS PERDIDO EL JUEGO. COMO NO TIENES MÁS DRAGONES O JINETES PARA PROTEGER TU ALDEA, LOS VIKINGOS HAN DESTRUIDO TODO:(" << endl;
+				cout << "     _/_/_/    _/_/_/_/  _/_/_/    _/_/_/    _/_/_/    _/_/_/  _/_/_/_/_/  _/_/_/_/   " << endl;
+				cout << "    _/    _/  _/        _/    _/  _/    _/    _/    _/            _/      _/         " << endl;
+				cout << "   _/_/_/    _/_/_/    _/_/_/    _/    _/    _/      _/_/        _/      _/_/_/       " << endl;
+				cout << "  _/        _/        _/    _/  _/    _/    _/          _/      _/      _/           " << endl;
+				cout << " _/        _/_/_/_/  _/    _/  _/_/_/    _/_/_/  _/_/_/        _/      _/_/_/_/       " << endl;
 				return 3;
 			}
 
@@ -236,7 +252,7 @@ int cUsuario::simulacion()
 						this->domar_Dragon(*it2);
 					}
 					catch (const exception& e) {
-						cout << e.what();
+						cout << e.what() << endl;
 					}
 					cont++;
 				}
@@ -312,7 +328,7 @@ void cUsuario::combate() {
 							(*it)->atacarDragon(*it2);
 						}
 						catch (const exception& e) {
-							cout << e.what();
+							cout << e.what() << endl;
 						}
 						//ataco al dragon de este jinete random, si el dragon está muerto, ataco al jinete, si no tiene dragon, salta exception
 						i++;

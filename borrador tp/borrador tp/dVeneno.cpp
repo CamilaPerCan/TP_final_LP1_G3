@@ -14,8 +14,8 @@ int dVeneno::atacar(cVikingo* victima) {//bajar y poner un if
 	}
 	else {
 		victima->set_vida(0);
-		cout << GREEN_BG << BLACK_TEXT << this->nombre << " esta envenenando a " << victima->get_nombre() << endl;
-		cout << "Has asesinado a " << victima->get_nombre() << "!!" << endl << RED_TEXT << " FUERZA BARBIE, GUERRERA." << RESET<<endl;
+		cout << GREEN_BG << BLACK_TEXT << this->nombre << " esta envenenando a " << victima->get_nombre() << RESET << endl;
+		cout << RED_TEXT << "Has asesinado a " << victima->get_nombre() << "!!" << RESET << endl << RED_TEXT << " FUERZA BARBIE, GUERRERA." << RESET<<endl;
 		puntosGanados = 50;
 	}
 	this->litros = this->litros - 1;

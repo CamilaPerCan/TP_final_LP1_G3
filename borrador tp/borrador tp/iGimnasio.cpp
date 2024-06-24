@@ -21,8 +21,9 @@ void iGimnasio::subir_nivel()
 	this->nivel++;
 	this->capacidad = this->capacidad + 5;
 	this->precio = this->precio + 15;
-	cout << "Has subido el nivel del gimnasio! Ahora esta en el nivel " << this->nivel << " Has aumentado la capacidad de entregar energia! Ahora la capacidad es " 
-		<< this->capacidad << " Ahora se necesitan " << this->precio << " para aumentar esta capacidad del gimnasio." << endl;
+	cout << GREEN_TEXT << "Has subido el nivel del gimnasio! Ahora esta en el nivel " << this->nivel << RESET << endl;
+	cout << "Has aumentado la capacidad de entregar energia! Ahora la capacidad es " << this->capacidad << endl; 
+	cout << "Ahora se necesitan " << this->precio << " para aumentar esta capacidad del gimnasio." << endl;
 }
 
 void iGimnasio::bajar_nivel()

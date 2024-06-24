@@ -12,27 +12,9 @@ ostream& operator<<(ostream &datito, cVikingo& vikinguito) {
 
 ostream& operator<<(ostream& datito, cJinete& jinetito)
 {
-	datito << jinetito.nombre << ", " << jinetito.dragoncito->get_nombre() << ", " << jinetito.caracFisicas << ", " << jinetito.cant << ", " << jinetito.puestoGuerra << endl;
+	datito << "El jinete " << jinetito.nombre << " es " << jinetito.caracFisicas << " y trabaja de " << jinetito.puestoGuerra << ". Tiene al dragon " << jinetito.dragoncito->get_nombre() << endl;
 	return datito;
 }
-
-/*void combate(cUsusario &jugador) {
-	
-	int vidaV = 0;
-	list<cVikingo*>::iterator it = vikingos->begin();
-	for (it = vikingos->begin(); it != vikingos->end(); it++) {
-		vidaV = vidaV + (*it)->get_vida();
-	}
-
-	int vidaJ = 0;
-	list<cJinete*>::iterator it1 = jinetes->begin();
-	for (it1 = jinetes->begin(); it1 != jinetes->end(); it1++) {
-		vidaJ = vidaJ + (*it1)->get_vida();
-	}//por si queremos considerar la vida de los personajes
-	
-	return 0;
-}*/
-
 
 /* std::cout << "   \\\\|||//    " << std::endl;
     std::cout << "  (  o o  )   " << std::endl;

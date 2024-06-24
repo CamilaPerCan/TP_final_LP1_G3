@@ -77,13 +77,14 @@ int main()
     aldea.push_back(hospital);
 
     cUsuario YO(dragones, jinetitos, vikingitos, aldea);
-
+    
     int estado = 0;
-
+    
     while (estado == 0) {
         estado=YO.simulacion();
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
+    
 
     delete dragoncito1;
     delete dragoncito2;
